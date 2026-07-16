@@ -1,145 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-<meta name="description" content=" Institute of Electro-Optics & Photonics (IEOP), an educational platform for photonics, electro-optics, optical communications, color science, electronics, MATLAB, and Python."
->
-<title>Home | IEOP</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Institute of Electro-Optics & Photonics (IEOP), an educational platform for photonics, electro-optics, optical communications, color science, electronics, MATLAB, and Python."
+  >
+
+  <title>Home | IEOP</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<link rel="stylesheet" href="style.css">
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="../index.html">
-      <div class="brand-mark">IEOP</div>
-      <div class="brand-text">
-        <strong>Institute of Electro-Optics &amp; Photonics</strong>
-        <span>Education • Research • Innovation</span>
-      </div>
-    </a>
 
-    <nav id="mainNav">
-      <a href="../index.html">Home</a>
-      <a href="index.html" class="active">Color Science</a>
-      <a href="../tutorials.html">Tutorials</a>
-      <a href="../research.html">Research</a>
-      <a href="../publications.html">Publications</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+  <!-- =========================
+       Header
+  ========================== -->
 
-    <div class="header-actions">
-      <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode">☾</button>
-      <button class="menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-controls="mainNav" aria-expanded="false">☰</button>
-    </div>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="container header-inner">
 
-<main>
-  <section class="page-hero">
-    <div class="container">
-      <span class="eyebrow">IEOP Learning Area</span>
-      <h1>Color Science</h1>
-      <p>
-        Learn how color is perceived, measured, represented, compared, and reproduced
-        in optical, imaging, and display systems.
-      </p>
-    </div>
-  </section>
+      <a class="brand" href="index.html">
+        <div class="brand-mark">IEOP</div>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Course Contents</span>
-          <h2>Explore Color Science</h2>
+        <div class="brand-text">
+          <strong>Institute of Electro-Optics &amp; Photonics</strong>
+          <span>Education • Research • Innovation</span>
         </div>
-        <p>
-          Begin with human vision and color-matching experiments, then continue
-          to CIE color systems, chromaticity, color difference, and displays.
-        </p>
+      </a>
+
+      <nav id="mainNav">
+        <a href="index.html" class="active">Home</a>
+        <a href="color-science/">Color Science</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle dark mode"
+        >
+          ☾
+        </button>
+
+        <button
+          class="menu-btn"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mainNav"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
       </div>
 
-      <div class="grid-3">
+    </div>
+  </header>
 
-        <a href="human-vision.html" class="card-link">
-          <article class="card">
+
+  <main>
+
+    <!-- =========================
+         Hero Section
+    ========================== -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="eyebrow">Open Learning in Photonics</span>
+
+          <h1>Where light becomes technology.</h1>
+
+          <p>
+            IEOP is an educational platform for electro-optics, photonics,
+            optical communications, color science, electronics, MATLAB,
+            Python, and related engineering fields.
+          </p>
+
+          <div class="button-row">
+            <a class="btn btn-primary" href="tutorials.html">
+              Explore Tutorials
+            </a>
+
+            <a class="btn btn-secondary" href="research.html">
+              View Research Areas
+            </a>
+          </div>
+        </div>
+
+
+        <div
+          class="hero-visual"
+          role="img"
+          aria-label="Abstract illustration representing photonics and optical communications"
+        >
+          <div class="orbit"></div>
+          <div class="beam"></div>
+
+          <div class="visual-label">
+            Electro-Optics • Photonics • Communications
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         Statistics
+    ========================== -->
+
+    <section class="container stats" aria-label="IEOP features">
+
+      <div class="stat">
+        <strong>Open</strong>
+        <span>Educational resources</span>
+      </div>
+
+      <div class="stat">
+        <strong>CIE</strong>
+        <span>Color science tutorials</span>
+      </div>
+
+      <div class="stat">
+        <strong>MATLAB</strong>
+        <span>Simulation examples</span>
+      </div>
+
+      <div class="stat">
+        <strong>Python</strong>
+        <span>Engineering tools</span>
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         Main Learning Areas
+    ========================== -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <span class="eyebrow">Explore IEOP</span>
+            <h2>Learn from theory to application.</h2>
+          </div>
+
+          <p>
+            Build a strong foundation in optics, electronics, and
+            communication systems, then connect scientific theory with
+            engineering applications.
+          </p>
+
+        </div>
+
+
+        <div class="grid-3">
+
+          <!-- Photonics -->
+
+          <article class="card coming-soon">
             <div class="card-icon">◉</div>
-            <h3>1. Human Vision</h3>
-            <p>The eye, retina, rods, cones, and the physiological basis of color perception.</p>
-            <span class="status-label available">Open Lesson</span>
-          </article>
-        </a>
 
-        <a href="wright-guild.html" class="card-link">
-          <article class="card">
-            <div class="card-icon">RGB</div>
-            <h3>2. Wright–Guild Experiment</h3>
-            <p>Historical color-matching experiments and RGB color-matching functions.</p>
-            <span class="status-label available">Open Lesson</span>
-          </article>
-        </a>
+            <h3>Photonics &amp; Electro-Optics</h3>
 
-        <a href="cie-1931.html" class="card-link">
-          <article class="card">
-            <div class="card-icon">1931</div>
-            <h3>3. CIE 1931</h3>
-            <p>The standard observer and the foundation of modern colorimetry.</p>
-            <span class="status-label available">Open Lesson</span>
-          </article>
-        </a>
+            <p>
+              Lasers, LEDs, photodetectors, modulators, waveguides, and
+              optical systems.
+            </p>
 
-        <a href="xyz-color-space.html" class="card-link">
-          <article class="card">
-            <div class="card-icon">XYZ</div>
-            <h3>4. XYZ Color Space</h3>
-            <p>Tristimulus values and mathematical representation of visible colors.</p>
-            <span class="status-label available">Open Lesson</span>
+            <span class="status-label">Coming Soon</span>
           </article>
-        </a>
 
-        <a href="chromaticity-diagram.html" class="card-link">
-          <article class="card">
-            <div class="card-icon">x,y</div>
-            <h3>5. Chromaticity Diagram</h3>
-            <p>Spectral locus, line of purples, white points, and color mixtures.</p>
-            <span class="status-label available">Open Lesson</span>
-          </article>
-        </a>
 
-        <a href="color-difference.html" class="card-link">
-          <article class="card">
-            <div class="card-icon">ΔE</div>
-            <h3>6. Color Difference</h3>
-            <p>Perceptual color differences and uniform color spaces.</p>
-            <span class="status-label available">Open Lesson</span>
-          </article>
-        </a>
+          <!-- Optical Communications -->
 
-        <a href="display-systems.html" class="card-link">
-          <article class="card">
-            <div class="card-icon">▣</div>
-            <h3>7. Display Systems</h3>
-            <p>Primaries, color gamut, white balance, calibration, and metrology.</p>
-            <span class="status-label available">Open Lesson</span>
+          <article class="card coming-soon">
+            <div class="card-icon">↝</div>
+
+            <h3>Optical Communications</h3>
+
+            <p>
+              Fiber links, modulation, multiplexing, photodetection, and
+              communication-system analysis.
+            </p>
+
+            <span class="status-label">Coming Soon</span>
           </article>
+
+
+          <!-- Color Science -->
+
+          <a
+            href="color-science/"
+            class="card-link"
+            aria-label="Explore Color and Display Science"
+          >
+            <article class="card">
+              <div class="card-icon">⌁</div>
+
+              <h3>Color &amp; Display Science</h3>
+
+              <p>
+                Human vision, Wright–Guild color matching, CIE 1931, XYZ,
+                chromaticity, color difference, and display systems.
+              </p>
+
+              <span class="status-label available">
+                Explore Topic
+              </span>
+            </article>
+          </a>
+
+
+          <!-- Electronics -->
+
+          <article class="card coming-soon">
+            <div class="card-icon">∿</div>
+
+            <h3>Electronics</h3>
+
+            <p>
+              Circuits, electronic components, measurements,
+              troubleshooting, and practical engineering.
+            </p>
+
+            <span class="status-label">Coming Soon</span>
+          </article>
+
+
+          <!-- MATLAB and Python -->
+
+          <article class="card coming-soon">
+            <div class="card-icon">π</div>
+
+            <h3>MATLAB &amp; Python</h3>
+
+            <p>
+              Computational examples, plots, simulations, and technical
+              programming for engineering applications.
+            </p>
+
+            <span class="status-label">Coming Soon</span>
+          </article>
+
+
+          <!-- Research -->
+
+          <a
+            href="research.html"
+            class="card-link"
+            aria-label="Explore IEOP research resources"
+          >
+            <article class="card">
+              <div class="card-icon">✦</div>
+
+              <h3>Research Resources</h3>
+
+              <p>
+                Publications, mathematical models, technical notes, and
+                educational research resources.
+              </p>
+
+              <span class="status-label available">
+                Explore
+              </span>
+            </article>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         Mission
+    ========================== -->
+
+    <section class="section alt">
+      <div class="container grid-2">
+
+        <div>
+          <span class="eyebrow">Mission</span>
+
+          <h2>
+            Make advanced optics understandable and practical.
+          </h2>
+
+          <p>
+            IEOP connects mathematical foundations, physical understanding,
+            simulation, laboratory practice, and real engineering
+            applications through open educational resources.
+          </p>
+
+          <a class="btn btn-primary" href="about.html">
+            About IEOP
+          </a>
+        </div>
+
+
+        <div class="notice">
+          <strong>Website Status</strong>
+
+          <p>
+            IEOP is under development. Color Science is currently available,
+            while new tutorials, figures, simulations, and research resources
+            will be added over time.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         Founder
+    ========================== -->
+
+    <section class="section">
+      <div class="container">
+
+        <span class="eyebrow">Founder</span>
+
+        <h2>Dr. Ibrahim Barka</h2>
+
+        <p>
+          Dr. Ibrahim Barka is an electrical engineer, educator, and
+          researcher specializing in electro-optics, photonics, optical
+          communications, fiber optics, color science, and engineering
+          education.
+        </p>
+
+        <p>
+          He founded IEOP to provide clear, structured, and accessible
+          educational resources that connect scientific theory with
+          simulation, experimentation, and practical engineering.
+        </p>
+
+        <a class="btn btn-secondary" href="about.html">
+          Learn More
         </a>
 
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer class="footer">
-  <div class="container">
-    <h3>Institute of Electro-Optics &amp; Photonics</h3>
-    <p>Educational resources for optics, photonics, color science, and communication systems.</p>
-    <div class="footer-bottom">
-      &copy; 2026 IEOP. Built for education and research.
-    </div>
-  </div>
-</footer>
+  </main>
 
-<script src="../script.js"></script>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h3>Institute of Electro-Optics &amp; Photonics</h3>
+
+          <p>
+            Open educational resources connecting optics, photonics,
+            communication systems, color science, and engineering.
+          </p>
+        </div>
+
+
+        <div>
+          <h4>Explore</h4>
+
+          <p>
+            <a href="tutorials.html">Tutorials</a>
+          </p>
+
+          <p>
+            <a href="color-science/">Color Science</a>
+          </p>
+
+          <p>
+            <a href="research.html">Research Areas</a>
+          </p>
+        </div>
+
+
+        <div>
+          <h4>Connect</h4>
+
+          <p>
+            <a href="about.html">About IEOP</a>
+          </p>
+
+          <p>
+            <a href="publications.html">Publications</a>
+          </p>
+
+          <p>
+            <a href="contact.html">Contact</a>
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+        &copy; 2026 IEOP. Built for education and research.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
