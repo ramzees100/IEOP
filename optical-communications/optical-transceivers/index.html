@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Learn optical transceiver architecture, form factors, optical and electrical interfaces, IEEE Ethernet standards, MSAs, and validation methods."
+  >
+
+  <title>Optical Transceivers | IEOP</title>
+
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="../../index.html">
+        <div class="brand-mark">IEOP</div>
+
+        <div class="brand-text">
+          <strong>Institute of Electro-Optics &amp; Photonics</strong>
+          <span>Education • Research • Innovation</span>
+        </div>
+      </a>
+
+      <nav id="mainNav">
+        <a href="../../index.html">Home</a>
+        <a href="../../tutorials.html" class="active">Tutorials</a>
+        <a href="../../research.html">Research</a>
+        <a href="../../publications.html">Publications</a>
+        <a href="../../contact.html">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle dark mode"
+        >
+          ☾
+        </button>
+
+        <button
+          class="menu-btn"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+          aria-controls="mainNav"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="eyebrow">Optical Communications</span>
+
+        <h1>Optical Transceivers</h1>
+
+        <p>
+          An optical transceiver combines a transmitter and receiver in one
+          module, converting electrical data into optical signals and received
+          optical signals back into electrical data.
+        </p>
+
+        <div class="button-row">
+          <a class="btn btn-secondary" href="../">
+            Back to Optical Communications
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Learning Topics</span>
+            <h2>Understand optical transceiver technology</h2>
+          </div>
+
+          <p>
+            Explore the internal architecture, physical form factors,
+            interfaces, standards, monitoring, and performance validation
+            of modern optical transceivers.
+          </p>
+        </div>
+
+
+        <div class="grid-3">
+
+          <article class="card">
+            <div class="card-icon">Tx/Rx</div>
+
+            <h3>Transceiver Architecture</h3>
+
+            <p>
+              Understand the transmitter, receiver, control electronics,
+              optical components, and electrical data paths.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">SFP</div>
+
+            <h3>Form Factors</h3>
+
+            <p>
+              Compare SFP, SFP+, QSFP28, QSFP-DD, OSFP, and other
+              pluggable-module form factors.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">I/O</div>
+
+            <h3>Host and Optical Interfaces</h3>
+
+            <p>
+              Learn how the module connects to the host system and to
+              single-mode or multimode optical fiber.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">802.3</div>
+
+            <h3>IEEE Ethernet Standards</h3>
+
+            <p>
+              Explore optical Ethernet specifications such as
+              10GBASE-SR, 100GBASE-LR4, and 400GBASE-FR4.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">MSA</div>
+
+            <h3>Multi-Source Agreements</h3>
+
+            <p>
+              Understand how MSAs define module dimensions, connectors,
+              electrical interfaces, power, and management functions.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">DDM</div>
+
+            <h3>Monitoring and Management</h3>
+
+            <p>
+              Study module identification, temperature, supply voltage,
+              optical power, bias current, alarms, and digital diagnostics.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">BER</div>
+
+            <h3>Validation and Characterization</h3>
+
+            <p>
+              Measure transmitted and received optical power, wavelength,
+              eye quality, receiver sensitivity, and bit-error rate.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">λ</div>
+
+            <h3>Wavelength and Lanes</h3>
+
+            <p>
+              Compare parallel-fiber systems with wavelength-division
+              multiplexed transceivers and multi-lane architectures.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <div class="card-icon">km</div>
+
+            <h3>Reach and Fiber Type</h3>
+
+            <p>
+              Relate transmission distance to wavelength, fiber type,
+              optical power budget, dispersion, and Ethernet reach class.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Basic Signal Flow</span>
+            <h2>How a transceiver carries bidirectional data</h2>
+          </div>
+        </div>
+
+        <article class="card">
+          <p>
+            <strong>Transmit direction:</strong>
+            Host electrical data → Transmitter → Optical fiber
+          </p>
+
+          <p>
+            <strong>Receive direction:</strong>
+            Optical fiber → Receiver → Host electrical data
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <script src="../../script.js"></script>
+
+</body>
+</html>
