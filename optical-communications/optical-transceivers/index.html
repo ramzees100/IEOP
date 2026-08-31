@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Learn optical transceiver architecture, form factors, optical and electrical interfaces, IEEE Ethernet standards, MSAs, and validation methods."
+    content="Learn optical transceiver architecture, form factors, fiber-optic connectors, optical and electrical interfaces, IEEE Ethernet standards, MSAs, and validation methods."
   >
 
   <title>Optical Transceivers | IEOP</title>
@@ -42,6 +42,7 @@
       </nav>
 
       <div class="header-actions">
+
         <button
           class="icon-btn"
           id="themeToggle"
@@ -61,6 +62,7 @@
         >
           ☰
         </button>
+
       </div>
 
     </div>
@@ -69,6 +71,7 @@
 
   <main>
 
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
 
@@ -92,25 +95,30 @@
     </section>
 
 
+    <!-- Learning Topics -->
     <section class="section">
       <div class="container">
 
         <div class="section-head">
+
           <div>
             <span class="eyebrow">Learning Topics</span>
+
             <h2>Understand optical transceiver technology</h2>
           </div>
 
           <p>
             Explore the internal architecture, physical form factors,
-            interfaces, standards, monitoring, and performance validation
-            of modern optical transceivers.
+            interfaces, connectors, standards, monitoring, and performance
+            validation of modern optical transceivers.
           </p>
+
         </div>
 
 
         <div class="grid-3">
 
+          <!-- Transceiver Architecture -->
           <article class="card">
             <div class="card-icon">Tx/Rx</div>
 
@@ -123,6 +131,7 @@
           </article>
 
 
+          <!-- Form Factors -->
           <article class="card">
             <div class="card-icon">SFP</div>
 
@@ -134,55 +143,67 @@
             </p>
           </article>
 
-<article class="card">
-  <div class="card-icon">I/O</div>
 
-  <h3>Host and Optical Interfaces</h3>
+          <!-- Host and Optical Interfaces -->
+          <article class="card">
+            <div class="card-icon">I/O</div>
 
-  <p>
-    Learn how the module connects to the host system and to
-    single-mode or multimode optical fiber.
-  </p>
-</article>
+            <h3>Host and Optical Interfaces</h3>
 
-<article class="card">
-  <div class="card-icon">LC/MPO</div>
-
-  <h3>Common Fiber-Optic Connectors</h3>
-
-  <p>
-    Compare LC, SC, FC, ST, and MPO/MTP connectors and learn
-    which optical transceivers and Ethernet standards use them.
-  </p>
-
-  <a class="btn btn-small" href="fiber-optic-connectors/">
-    Explore Topic
-  </a>
-</article>
-
-          
-        
-  href="ieee-802-3/"
-  class="card-link"
-  aria-label="Explore IEEE 802.3 Ethernet Standards"
->
-  <article class="card">
-    <div class="card-icon">802.3</div>
-
-    <h3>IEEE 802.3 Ethernet Standards</h3>
-
-    <p>
-      Explore optical Ethernet specifications such as
-      10GBASE-SR, 100GBASE-LR4, and 400GBASE-FR4.
-    </p>
-
-    <span class="status-label available">
-      Explore Topic
-    </span>
-  </article>
-</a>
+            <p>
+              Learn how the module connects to the host system and to
+              single-mode or multimode optical fiber.
+            </p>
+          </article>
 
 
+          <!-- Common Fiber-Optic Connectors -->
+          <a
+            href="fiber-optic-connectors/"
+            class="card-link"
+            aria-label="Explore Common Fiber-Optic Connectors"
+          >
+            <article class="card">
+              <div class="card-icon">LC/MPO</div>
+
+              <h3>Common Fiber-Optic Connectors</h3>
+
+              <p>
+                Compare LC, SC, FC, ST, and MPO/MTP connectors and learn
+                which optical transceivers and Ethernet standards use them.
+              </p>
+
+              <span class="status-label available">
+                Explore Topic
+              </span>
+            </article>
+          </a>
+
+
+          <!-- IEEE 802.3 Ethernet Standards -->
+          <a
+            href="ieee-802-3/"
+            class="card-link"
+            aria-label="Explore IEEE 802.3 Ethernet Standards"
+          >
+            <article class="card">
+              <div class="card-icon">802.3</div>
+
+              <h3>IEEE 802.3 Ethernet Standards</h3>
+
+              <p>
+                Explore optical Ethernet specifications such as
+                10GBASE-SR, 100GBASE-LR4, and 400GBASE-FR4.
+              </p>
+
+              <span class="status-label available">
+                Explore Topic
+              </span>
+            </article>
+          </a>
+
+
+          <!-- Multi-Source Agreements -->
           <article class="card">
             <div class="card-icon">MSA</div>
 
@@ -195,6 +216,7 @@
           </article>
 
 
+          <!-- Monitoring and Management -->
           <article class="card">
             <div class="card-icon">DDM</div>
 
@@ -207,6 +229,7 @@
           </article>
 
 
+          <!-- Validation and Characterization -->
           <article class="card">
             <div class="card-icon">BER</div>
 
@@ -219,6 +242,7 @@
           </article>
 
 
+          <!-- Wavelength and Lanes -->
           <article class="card">
             <div class="card-icon">λ</div>
 
@@ -231,6 +255,7 @@
           </article>
 
 
+          <!-- Reach and Fiber Type -->
           <article class="card">
             <div class="card-icon">km</div>
 
@@ -243,21 +268,27 @@
           </article>
 
         </div>
+
       </div>
     </section>
 
 
+    <!-- Basic Signal Flow -->
     <section class="section">
       <div class="container">
 
         <div class="section-head">
+
           <div>
             <span class="eyebrow">Basic Signal Flow</span>
+
             <h2>How a transceiver carries bidirectional data</h2>
           </div>
+
         </div>
 
         <article class="card">
+
           <p>
             <strong>Transmit direction:</strong>
             Host electrical data → Transmitter → Optical fiber
@@ -267,6 +298,7 @@
             <strong>Receive direction:</strong>
             Optical fiber → Receiver → Host electrical data
           </p>
+
         </article>
 
       </div>
@@ -278,4 +310,5 @@
   <script src="../../script.js"></script>
 
 </body>
+
 </html>
