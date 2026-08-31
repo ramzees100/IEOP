@@ -851,3 +851,80 @@ body.dark .card-link:hover .card {
     font-size: 2.65rem;
   }
 }
+/* ================================
+   Responsive data tables
+================================ */
+
+.table-wrap {
+  width: 100%;
+  margin-top: 2rem;
+  overflow-x: auto;
+  border: 1px solid rgba(18, 50, 77, 0.14);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(18, 50, 77, 0.08);
+}
+
+.table-wrap table {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.table-wrap th,
+.table-wrap td {
+  padding: 18px 20px;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.table-wrap th {
+  color: var(--text);
+  background: var(--surface-2);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.table-wrap td {
+  border-top: 1px solid rgba(18, 50, 77, 0.12);
+}
+
+.table-wrap tbody tr:nth-child(even) {
+  background: rgba(11, 79, 138, 0.04);
+}
+
+.table-wrap tbody tr:hover {
+  background: rgba(11, 79, 138, 0.08);
+}
+
+.table-wrap th:first-child,
+.table-wrap td:first-child {
+  min-width: 150px;
+  font-weight: 700;
+}
+
+.table-wrap th:nth-child(2),
+.table-wrap td:nth-child(2) {
+  min-width: 230px;
+}
+
+.table-wrap th:nth-child(3),
+.table-wrap td:nth-child(3) {
+  min-width: 310px;
+}
+
+.table-wrap th:nth-child(4),
+.table-wrap td:nth-child(4) {
+  min-width: 400px;
+}
+
+@media (max-width: 768px) {
+
+  .table-wrap th,
+  .table-wrap td {
+    padding: 14px 16px;
+  }
+}
