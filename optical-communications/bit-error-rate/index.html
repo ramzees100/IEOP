@@ -24,7 +24,75 @@
   <main>
 
     <section class="hero">
-      <div class="container">
+        <section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">BER Fundamentals</span>
+        <h2>What Is Bit Error Rate?</h2>
+      </div>
+    </div>
+
+    <div class="card">
+      <p>
+        Bit Error Rate, or BER, measures how reliably a digital
+        communication system transfers data from a transmitter
+        to a receiver.
+      </p>
+
+      <p>
+        A bit error occurs when the receiver detects a different
+        bit from the one that was transmitted.
+      </p>
+
+      <div class="equation-box">
+        <p class="equation">
+          BER =
+          <span class="fraction">
+            <span class="top">Number of Erroneous Bits</span>
+            <span class="bottom">Total Number of Tested Bits</span>
+          </span>
+        </p>
+      </div>
+
+      <div class="ber-example">
+
+        <div class="bit-row">
+          <strong>Transmitted:</strong>
+          <span>1</span>
+          <span>0</span>
+          <span>1</span>
+          <span>1</span>
+          <span>0</span>
+          <span>0</span>
+          <span>1</span>
+          <span>0</span>
+        </div>
+
+        <div class="bit-row">
+          <strong>Received:</strong>
+          <span>1</span>
+          <span>0</span>
+          <span>1</span>
+          <span class="bit-error">0</span>
+          <span>0</span>
+          <span>0</span>
+          <span>1</span>
+          <span>0</span>
+        </div>
+
+        <p class="example-note">
+          The highlighted bit is incorrect: the transmitter sent 1,
+          but the receiver detected 0.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
         <span class="eyebrow">System Performance</span>
 
