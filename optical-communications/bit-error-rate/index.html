@@ -197,7 +197,79 @@
       </div>
     </section>
 
+<!-- HOW BER IS MEASURED -->
+<section class="section">
+  <div class="container">
 
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">BER Testing</span>
+        <h2>How Is BER Measured?</h2>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <p>
+        In an optical communication system, a known digital bit
+        pattern is transmitted through the optical link. The received
+        bits are then compared with the transmitted bits to determine
+        how many errors occurred.
+      </p>
+
+      <div class="ber-flow">
+
+        <div class="ber-flow-step">
+          Electrical Data
+        </div>
+
+        <div class="ber-flow-arrow">→</div>
+
+        <div class="ber-flow-step">
+          TOSA
+          <small>Electrical → Optical</small>
+        </div>
+
+        <div class="ber-flow-arrow">→</div>
+
+        <div class="ber-flow-step">
+          Optical Fiber
+        </div>
+
+        <div class="ber-flow-arrow">→</div>
+
+        <div class="ber-flow-step">
+          ROSA
+          <small>Optical → Electrical</small>
+        </div>
+
+        <div class="ber-flow-arrow">→</div>
+
+        <div class="ber-flow-step">
+          Received Data
+        </div>
+
+      </div>
+
+
+      <div class="ber-compare">
+
+        <strong>Compare Transmitted and Received Bits</strong>
+
+        <span>↓</span>
+
+        <strong>Count Bit Errors</strong>
+
+        <span>↓</span>
+
+        <strong>Calculate BER</strong>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
   </main>
 
 </body>
