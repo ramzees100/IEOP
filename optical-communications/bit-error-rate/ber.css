@@ -245,3 +245,17 @@
   }
 
 }
+/* ==================================
+   BER Test-Time Table
+================================== */
+
+.ber-time-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.ber-time-table th,
+.ber-time-table td {
+  min-width: 0 !important;
+  text-align: center;
+}
