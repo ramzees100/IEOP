@@ -259,3 +259,30 @@
   min-width: 0 !important;
   text-align: center;
 }
+/* BER table column widths */
+
+.ber-time-table th:nth-child(1),
+.ber-time-table td:nth-child(1) {
+  width: 16%;
+}
+
+.ber-time-table th:nth-child(2),
+.ber-time-table td:nth-child(2) {
+  width: 21%;
+}
+
+.ber-time-table th:nth-child(3),
+.ber-time-table td:nth-child(3) {
+  width: 21%;
+}
+
+.ber-time-table th:nth-child(4),
+.ber-time-table td:nth-child(4) {
+  width: 21%;
+}
+
+.ber-time-table th:nth-child(5),
+.ber-time-table td:nth-child(5) {
+  width: 21%;
+}
+
