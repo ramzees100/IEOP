@@ -560,6 +560,216 @@
 
   </div>
 </section>
+
+    <!-- BER TEST TIME -->
+<section class="section">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">BER Test Duration</span>
+        <h2>How Long Should a BER Test Run?</h2>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <p>
+        Once the required number of tested bits is known,
+        the test duration depends on the data rate of the link.
+      </p>
+
+      <div class="equation-box">
+        <p class="equation">
+          t =
+          <span class="fraction">
+            <span class="top">N</span>
+            <span class="bottom">R</span>
+          </span>
+        </p>
+      </div>
+
+      <p>
+        where:
+      </p>
+
+      <p>
+        <strong>t</strong> = required test time,
+        <strong>N</strong> = required number of tested bits,
+        and <strong>R</strong> = data rate in bits per second.
+      </p>
+
+
+      <div class="ber-stat-step">
+
+        <h3>Example: 95% Confidence at 100 Gb/s</h3>
+
+        <p>
+          For a BER target of 10<sup>−12</sup> at 95% confidence,
+          we previously found:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            N ≈ 3 × 10<sup>12</sup> bits
+          </p>
+        </div>
+
+        <p>
+          The data rate is:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            R = 100 × 10<sup>9</sup> bits/s
+          </p>
+        </div>
+
+        <p>
+          Therefore:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            t =
+            <span class="fraction">
+              <span class="top">3 × 10<sup>12</sup></span>
+              <span class="bottom">100 × 10<sup>9</sup></span>
+            </span>
+            = 30 s
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="ber-compare">
+
+        <strong>BER Target: 10<sup>−12</sup></strong>
+
+        <span>↓</span>
+
+        <strong>Confidence: 95%</strong>
+
+        <span>↓</span>
+
+        <strong>Required Bits: ≈ 3 × 10<sup>12</sup></strong>
+
+        <span>↓</span>
+
+        <strong>Data Rate: 100 Gb/s</strong>
+
+        <span>↓</span>
+
+        <strong>Test Time: ≈ 30 seconds</strong>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- BER CONFIDENCE TEST-TIME TABLE -->
+<section class="section alt">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">BER Test Planning</span>
+        <h2>Confidence Level vs. Test Time</h2>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <p>
+        The table below shows the approximate test time required
+        to demonstrate a BER target of
+        <strong>10<sup>−12</sup></strong> at different confidence
+        levels and data rates.
+      </p>
+
+      <p>
+        These values assume that
+        <strong>zero bit errors are observed during the test</strong>.
+      </p>
+
+      <div class="table-wrap">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Data Rate</th>
+              <th>90% Confidence</th>
+              <th>95% Confidence</th>
+              <th>99% Confidence</th>
+              <th>99.9% Confidence</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>1 Gb/s</td>
+              <td>38.4 min</td>
+              <td>49.9 min</td>
+              <td>1.28 h</td>
+              <td>1.92 h</td>
+            </tr>
+
+            <tr>
+              <td>10 Gb/s</td>
+              <td>3.84 min</td>
+              <td>5.0 min</td>
+              <td>7.68 min</td>
+              <td>11.5 min</td>
+            </tr>
+
+            <tr>
+              <td>100 Gb/s</td>
+              <td>23 s</td>
+              <td><strong>30 s</strong></td>
+              <td>46 s</td>
+              <td>69 s ≈ 1.15 min</td>
+            </tr>
+
+            <tr>
+              <td>400 Gb/s</td>
+              <td>5.76 s</td>
+              <td>7.49 s</td>
+              <td>11.5 s</td>
+              <td>17.3 s</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <div class="ber-compare">
+
+        <strong>Higher Confidence</strong>
+
+        <span>↓</span>
+
+        <strong>More Bits Must Be Tested</strong>
+
+        <span>↓</span>
+
+        <strong>Longer Test Time</strong>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+    
   </main>
 
 </body>
