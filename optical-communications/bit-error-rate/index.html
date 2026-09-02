@@ -364,6 +364,202 @@
 
   </div>
 </section>
+
+    <!-- BER CONFIDENCE LEVEL -->
+<section class="section alt">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">BER Statistics</span>
+        <h2>What Does Confidence Level Mean?</h2>
+      </div>
+    </div>
+
+    <div class="card">
+
+      <p>
+        Observing zero errors during a BER test does not mean that
+        the BER is zero. Errors may simply be rare enough that none
+        occurred during the test.
+      </p>
+
+      <p>
+        The confidence level tells us how much statistical evidence
+        a zero-error test provides that the link performs better than
+        the specified BER target.
+      </p>
+
+
+      <!-- STEP 1 -->
+      <div class="ber-stat-step">
+
+        <h3>1. Start with the BER target</h3>
+
+        <p>
+          Suppose the required BER is:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            BER<sub>target</sub> = 10<sup>−12</sup>
+          </p>
+        </div>
+
+        <p>
+          This corresponds to an error probability of approximately
+          one error per trillion transmitted bits.
+        </p>
+
+      </div>
+
+
+      <!-- STEP 2 -->
+      <div class="ber-stat-step">
+
+        <h3>2. Probability of observing zero errors</h3>
+
+        <p>
+          If the probability of a bit error is
+          <strong>p</strong>, then the probability that one bit
+          contains no error is:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            1 − p
+          </p>
+        </div>
+
+        <p>
+          If N independent bits are tested, the probability of
+          observing zero errors is:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            P(0 errors) = (1 − p)<sup>N</sup>
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- STEP 3 -->
+      <div class="ber-stat-step">
+
+        <h3>3. Introduce the confidence level</h3>
+
+        <p>
+          For a 95% confidence test:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            C = 0.95
+          </p>
+        </div>
+
+        <p>
+          The remaining probability is:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            1 − C = 0.05
+          </p>
+        </div>
+
+        <p>
+          We therefore choose the number of tested bits so that,
+          if the true BER were exactly equal to the BER target,
+          the probability of observing zero errors would be only 5%.
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            (1 − p)<sup>N</sup> = 1 − C
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- STEP 4 -->
+      <div class="ber-stat-step">
+
+        <h3>4. Solve for the required number of bits</h3>
+
+        <p>
+          For very small BER values, the zero-error relationship
+          can be approximated as:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            N ≈
+            <span class="fraction">
+              <span class="top">−ln(1 − C)</span>
+              <span class="bottom">BER<sub>target</sub></span>
+            </span>
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- STEP 5 -->
+      <div class="ber-stat-step">
+
+        <h3>5. Example: 95% confidence</h3>
+
+        <p>
+          For a confidence level of 95%:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            −ln(1 − 0.95) = −ln(0.05) ≈ 3
+          </p>
+        </div>
+
+        <p>
+          Therefore, for a BER target of
+          10<sup>−12</sup>:
+        </p>
+
+        <div class="equation-box">
+          <p class="equation">
+            N ≈
+            <span class="fraction">
+              <span class="top">3</span>
+              <span class="bottom">10<sup>−12</sup></span>
+            </span>
+            = 3 × 10<sup>12</sup> bits
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="ber-compare">
+
+        <strong>BER Target: 10<sup>−12</sup></strong>
+
+        <span>↓</span>
+
+        <strong>Confidence: 95%</strong>
+
+        <span>↓</span>
+
+        <strong>Required Bits: ≈ 3 × 10<sup>12</sup></strong>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
   </main>
 
 </body>
