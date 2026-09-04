@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +11,7 @@
 
   <meta
     name="description"
-    content="Learn how eye diagrams are used to evaluate signal quality in high-speed optical communication systems."
+    content="Learn how eye diagrams reveal noise, timing jitter, intersymbol interference, rise and fall times, eye opening, and signal quality in optical communication systems."
   >
 
   <title>Eye Diagrams in Optical Communication | IEOP</title>
@@ -43,6 +42,7 @@
       </nav>
 
       <div class="header-actions">
+
         <button
           class="icon-btn"
           id="themeToggle"
@@ -62,25 +62,27 @@
         >
           ☰
         </button>
-      </div>
 
+      </div>
     </div>
   </header>
 
 
   <main>
 
+    <!-- HERO -->
+
     <section class="hero">
       <div class="container">
 
-        <span class="eyebrow">Signal Analysis</span>
+        <span class="eyebrow">Signal-Quality Analysis</span>
 
         <h1>Eye Diagrams in Optical Communication</h1>
 
         <p>
-          Learn how an eye diagram combines many received bit periods
-          into one display to reveal signal quality, noise, timing
-          jitter, distortion, and intersymbol interference.
+          Learn how an eye diagram reveals noise, timing jitter,
+          bandwidth limitations, intersymbol interference, and the
+          reliability of a high-speed optical link.
         </p>
 
         <div class="button-row">
@@ -93,6 +95,8 @@
     </section>
 
 
+    <!-- INTRODUCTION -->
+
     <section class="section">
       <div class="container">
 
@@ -104,20 +108,901 @@
         </div>
 
         <div class="card">
+
           <p>
-            An eye diagram is a visual representation of a digital
-            communication signal. It is produced by dividing a long
-            waveform into segments, usually one or two unit intervals
-            long, and overlaying those segments on the same time axis.
+            An eye diagram is a visual tool used to evaluate the quality
+            of a high-speed digital communication signal. It helps
+            engineers judge how reliably a receiver can distinguish
+            binary 1s from binary 0s and determine the best time to
+            sample each bit.
           </p>
 
           <p>
-            The overlapping traces form an eye-shaped opening. A wide,
-            tall, and clearly defined eye generally indicates good signal
-            quality. A narrow or partially closed eye indicates signal
-            degradation caused by noise, timing jitter, limited bandwidth,
-            dispersion, or intersymbol interference.
+            It is called an <em>eye diagram</em> because the opening
+            formed by the overlapping waveforms resembles a human eye.
           </p>
+
+          <p>
+            In an intensity-modulated optical link, a binary 1 is
+            represented by a higher optical-power level and a binary 0
+            by a lower optical-power level.
+          </p>
+
+          <p>
+            The zero level does not necessarily mean zero optical power.
+            A real laser may continue emitting some light while
+            transmitting a binary 0.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HOW IT IS CREATED -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Construction</span>
+            <h2>How is an eye diagram created?</h2>
+          </div>
+        </div>
+
+        <div class="card">
+
+          <p>
+            An eye diagram begins with a long received waveform
+            containing many 1s, 0s, and transitions.
+          </p>
+
+          <p>
+            The waveform is divided into short sections—commonly two
+            bit periods long. These sections are aligned to the bit
+            timing and overlaid in the same display window.
+          </p>
+
+          <p>
+            The overlapping sections include the possible signal
+            behaviors:
+          </p>
+
+          <ul>
+            <li>The signal remains at 0.</li>
+            <li>The signal remains at 1.</li>
+            <li>The signal transitions from 0 to 1.</li>
+            <li>The signal transitions from 1 to 0.</li>
+          </ul>
+
+          <p>
+            Hundreds or thousands of waveform sections may occupy the
+            same time window. The resulting pattern does not show one
+            particular bit sequence; it summarizes the behavior of many
+            transmitted and received bits.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- AXES -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Time and Amplitude</span>
+            <h2>Understanding the axes</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="card">
+            <h3>Vertical axis</h3>
+
+            <p>
+              The vertical axis represents signal amplitude. In an
+              optical eye diagram, it may represent optical power.
+            </p>
+
+            <p>
+              If the optical signal has passed through a photodetector,
+              the vertical axis may instead represent electrical
+              voltage or current.
+            </p>
+          </article>
+
+
+          <article class="card">
+            <h3>Horizontal axis</h3>
+
+            <p>
+              The horizontal axis represents time, commonly expressed
+              in unit intervals, abbreviated as UI.
+            </p>
+
+            <p>
+              For an NRZ signal, one UI is equal to one bit period.
+            </p>
+          </article>
+
+        </div>
+
+        <div class="card">
+
+          <h3>Calculating the unit interval</h3>
+
+          <p>
+            The bit period is calculated from the bit rate:
+          </p>
+
+          <p>
+            <strong>
+              T<sub>b</sub> = 1 / R<sub>b</sub>
+            </strong>
+          </p>
+
+          <p>
+            At 10 Gb/s:
+          </p>
+
+          <p>
+            <strong>
+              T<sub>b</sub> =
+              1 / (10 × 10<sup>9</sup>) =
+              100 ps
+            </strong>
+          </p>
+
+          <p>
+            Therefore, 1 UI = 100 ps, and a two-UI eye diagram
+            displays 200 ps of signal time.
+          </p>
+
+        </div>
+
+        <figure class="card">
+
+          <div
+            class="figure-placeholder"
+            role="img"
+            aria-label="Placeholder for an ideal NRZ waveform and ideal eye diagram"
+          >
+            Add the ideal NRZ waveform and ideal eye-diagram image here
+          </div>
+
+          <figcaption>
+            Figure 1. Ideal NRZ waveform and ideal eye diagram.
+          </figcaption>
+
+        </figure>
+
+      </div>
+    </section>
+
+
+    <!-- IDEAL EYE -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Reference Case</span>
+            <h2>The ideal eye diagram</h2>
+          </div>
+        </div>
+
+        <div class="card">
+
+          <p>
+            An ideal NRZ signal changes instantaneously between its low
+            and high levels. It has no noise, timing jitter, bandwidth
+            limitation, dispersion, or intersymbol interference.
+          </p>
+
+          <p>
+            Its upper rail represents consecutive binary 1s, its lower
+            rail represents consecutive binary 0s, and its vertical
+            lines represent instantaneous transitions.
+          </p>
+
+          <p>In an ideal eye diagram:</p>
+
+          <ul>
+            <li>The one and zero levels are perfectly stable.</li>
+
+            <li>
+              Every transition occurs at exactly the expected time.
+            </li>
+
+            <li>The rise and fall times are zero.</li>
+
+            <li>
+              The upper and lower rails have no thickness.
+            </li>
+
+            <li>Timing jitter is zero.</li>
+
+            <li>
+              The vertical and horizontal eye openings are at their
+              maximum.
+            </li>
+          </ul>
+
+          <p>
+            No physical optical system produces a perfectly ideal eye.
+            The ideal eye is a reference that helps us understand how
+            real impairments affect the received signal.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- RECEIVER DECISION -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Receiver Decision</span>
+
+            <h2>
+              Decision threshold and sampling time
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="card">
+
+            <h3>Decision threshold</h3>
+
+            <p>
+              The receiver compares the sampled signal with a decision
+              threshold.
+            </p>
+
+            <p>
+              A sample above the threshold is interpreted as a binary 1.
+              A sample below the threshold is interpreted as a binary 0.
+            </p>
+
+            <p>
+              For ideal normalized levels of 1 and 0, the midpoint
+              threshold is:
+            </p>
+
+            <p>
+              <strong>
+                Decision threshold = (1 + 0) / 2 = 0.5
+              </strong>
+            </p>
+
+            <p>
+              In a real receiver, the optimum threshold may differ from
+              the midpoint when the two levels have unequal noise or
+              probability distributions.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Best sampling time</h3>
+
+            <p>
+              The safest sampling point is normally near the horizontal
+              center of the eye opening.
+            </p>
+
+            <p>
+              At this location, the signal is farthest from the
+              transitions and has had the most time to settle at the
+              one or zero level.
+            </p>
+
+            <p>
+              Sampling near a crossing is risky because even a small
+              amount of timing jitter can move the sample to the wrong
+              side of a transition.
+            </p>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- KEY MEASUREMENTS -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Key Measurements</span>
+            <h2>Reading the eye opening</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="card">
+
+            <h3>Eye amplitude</h3>
+
+            <p>
+              Eye amplitude is the difference between the average one
+              level and average zero level:
+            </p>
+
+            <p>
+              <strong>
+                Eye amplitude =
+                μ<sub>1</sub> − μ<sub>0</sub>
+              </strong>
+            </p>
+
+            <p>
+              For an optical signal, the related quantity is optical
+              modulation amplitude:
+            </p>
+
+            <p>
+              <strong>
+                OMA = P<sub>1</sub> − P<sub>0</sub>
+              </strong>
+            </p>
+
+            <p>
+              Eye amplitude describes the separation between the
+              average signal levels. It does not by itself include
+              noise or rail thickness.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Eye height</h3>
+
+            <p>
+              Eye height is the clear vertical opening between the
+              one-level and zero-level distributions at the sampling
+              time.
+            </p>
+
+            <p>
+              Unlike eye amplitude, eye height includes the effects of
+              noise and other signal-level variations.
+            </p>
+
+            <p>
+              One common statistical estimate is:
+            </p>
+
+            <p>
+              <strong>
+                Eye height =
+                (μ<sub>1</sub> − 3σ<sub>1</sub>) −
+                (μ<sub>0</sub> + 3σ<sub>0</sub>)
+              </strong>
+            </p>
+
+            <p>
+              The exact eye-height definition may depend on the
+              instrument or communication standard being used.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Eye width</h3>
+
+            <p>
+              Eye width is the clear horizontal interval between the
+              signal-transition regions. It is measured at a defined
+              amplitude, often near the decision threshold.
+            </p>
+
+            <p>
+              It represents the amount of time during which the
+              receiver can sample the signal reliably.
+            </p>
+
+            <p>
+              An ideal NRZ eye has a width of approximately 1 UI.
+              Timing jitter and slow transitions reduce the eye width.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Noise margin</h3>
+
+            <p>
+              Noise margin is the vertical distance between the
+              decision threshold and the nearest valid signal
+              boundary.
+            </p>
+
+            <p>
+              Separate noise margins exist for the one and zero
+              levels. The smaller value is the limiting noise margin.
+            </p>
+
+            <p>
+              For ideal normalized levels of 1 and 0 with a threshold
+              of 0.5, both noise margins are 0.5 normalized units.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Rise and fall times</h3>
+
+            <p>
+              Rise time describes how long the signal takes to move
+              from its low level to its high level.
+            </p>
+
+            <p>
+              Fall time describes how long the signal takes to move
+              from its high level to its low level.
+            </p>
+
+            <p>
+              They are commonly measured from 10% to 90% or from 20%
+              to 80% of the total signal amplitude.
+            </p>
+
+            <p>
+              Finite rise and fall times produce sloped or curved
+              transitions. Slower transitions occupy more of the bit
+              period and reduce the eye width.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Crossing-time jitter</h3>
+
+            <p>
+              Crossing-time jitter is the horizontal variation in the
+              times at which rising and falling transitions cross a
+              specified reference level.
+            </p>
+
+            <p>
+              The reference level is commonly placed near the midpoint
+              between the one and zero levels.
+            </p>
+
+            <p>
+              The term <em>zero crossing</em> refers to this transition
+              crossing level. It does not necessarily mean zero
+              optical power.
+            </p>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SIGNAL IMPAIRMENTS -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Signal Impairments</span>
+            <h2>Why does a real eye close?</h2>
+          </div>
+        </div>
+
+        <div class="grid-3">
+
+          <article class="card">
+
+            <h3>Bandwidth limitation</h3>
+
+            <p>
+              A rectangular digital signal contains many frequency
+              components. Limited transmitter, channel, receiver, or
+              oscilloscope bandwidth removes some of the high-frequency
+              content needed to reproduce sharp transitions.
+            </p>
+
+            <p>
+              This produces slower edges, curved transitions, ringing,
+              and a smaller eye opening.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Intersymbol interference</h3>
+
+            <p>
+              Intersymbol interference, abbreviated as ISI, occurs when
+              one bit affects neighboring bit periods.
+            </p>
+
+            <p>
+              If the signal has not settled before the next bit arrives,
+              its shape and amplitude can depend on the surrounding bit
+              pattern.
+            </p>
+
+            <p>
+              These pattern-dependent differences produce multiple
+              paths through the eye and reduce both eye height and eye
+              width.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Amplitude noise</h3>
+
+            <p>
+              Random amplitude variation appears as vertical thickness
+              or fuzziness along the upper and lower rails.
+            </p>
+
+            <p>Possible sources include:</p>
+
+            <ul>
+              <li>Laser intensity noise</li>
+              <li>Shot noise</li>
+              <li>Thermal noise</li>
+              <li>Amplifier noise</li>
+              <li>Crosstalk</li>
+              <li>Electrical interference</li>
+            </ul>
+
+            <p>
+              <em>Amplitude noise</em> or <em>level variation</em> is
+              more precise than “amplitude jitter,” because jitter
+              normally describes timing variation.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Timing jitter</h3>
+
+            <p>
+              Timing jitter is the variation of a signal transition
+              from its expected time.
+            </p>
+
+            <p>
+              In an eye diagram, timing jitter appears as horizontal
+              spreading around the crossing points.
+            </p>
+
+            <p>
+              Jitter may be stated in seconds or as a fraction of one
+              UI.
+            </p>
+
+            <p>
+              At 10 Gb/s, 1 UI = 100 ps. Therefore:
+            </p>
+
+            <p>
+              <strong>0.03 UI = 3 ps</strong>
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Dispersion</h3>
+
+            <p>
+              Fiber dispersion broadens optical pulses as they
+              propagate through the fiber.
+            </p>
+
+            <p>
+              Broadened pulses can overlap neighboring bit periods,
+              increasing ISI and closing the eye vertically and
+              horizontally.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Measurement bandwidth</h3>
+
+            <p>
+              The displayed eye includes the response of the complete
+              measurement path.
+            </p>
+
+            <p>
+              The photodetector, optical-to-electrical converter,
+              cables, connectors, and oscilloscope must have suitable
+              bandwidth.
+            </p>
+
+            <p>
+              Otherwise, the measurement system may make the eye
+              appear more closed than the original signal actually is.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <figure class="card">
+
+          <div
+            class="figure-placeholder"
+            role="img"
+            aria-label="Placeholder for a bandwidth-limited waveform and eye diagram"
+          >
+            Add the bandwidth-limited waveform and eye-diagram image here
+          </div>
+
+          <figcaption>
+            Figure 2. Effect of bandwidth limitation on an NRZ
+            waveform and its eye diagram.
+          </figcaption>
+
+        </figure>
+
+
+        <figure class="card">
+
+          <div
+            class="figure-placeholder"
+            role="img"
+            aria-label="Placeholder for an eye diagram showing noise and timing jitter"
+          >
+            Add the eye diagram with amplitude noise and timing jitter here
+          </div>
+
+          <figcaption>
+            Figure 3. Eye diagram showing amplitude noise, timing
+            jitter, and the decision threshold.
+          </figcaption>
+
+        </figure>
+
+      </div>
+    </section>
+
+
+    <!-- INTERPRETATION -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Interpretation</span>
+            <h2>How to judge a realistic eye</h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="card">
+
+            <h3>A healthy eye</h3>
+
+            <ul>
+              <li>Large eye height and eye width</li>
+              <li>Thin upper and lower rails</li>
+              <li>Concentrated crossing regions</li>
+              <li>Fast, smooth transitions</li>
+              <li>A properly positioned decision threshold</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>A degraded eye</h3>
+
+            <ul>
+              <li>Small vertical or horizontal opening</li>
+              <li>Thick or noisy rails</li>
+              <li>Widely spread crossing regions</li>
+              <li>Slow or pattern-dependent transitions</li>
+              <li>Overshoot, undershoot, or ringing</li>
+              <li>Significant intersymbol interference</li>
+            </ul>
+
+          </article>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>How bit errors occur</h3>
+
+          <p>
+            At the sampling time, a transmitted 1 is detected
+            incorrectly if noise or distortion pushes its sampled
+            value below the decision threshold.
+          </p>
+
+          <p>
+            A transmitted 0 is detected incorrectly if its sampled
+            value rises above the decision threshold.
+          </p>
+
+          <p>
+            Timing jitter may also cause an error by moving the
+            sampling instant too close to a transition.
+          </p>
+
+          <p>
+            As the eye closes vertically or horizontally, the
+            probability of an incorrect decision increases.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- EYE DIAGRAM AND BER -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Link Validation</span>
+            <h2>Eye diagram versus bit-error rate</h2>
+          </div>
+        </div>
+
+        <div class="card">
+
+          <p>
+            An eye diagram provides a visual summary of signal
+            integrity, but it does not directly count bit errors.
+          </p>
+
+          <p>
+            A large, open eye generally suggests a lower probability
+            of error. However, it does not prove that a specified
+            bit-error rate has been achieved because rare errors may
+            not appear in the displayed traces.
+          </p>
+
+          <ul>
+
+            <li>
+              <strong>Eye-diagram analysis</strong> shows noise margin,
+              timing margin, jitter, distortion, and other signal
+              impairments.
+            </li>
+
+            <li>
+              <strong>BER testing</strong> compares transmitted and
+              received bits and counts actual errors over a defined
+              test interval.
+            </li>
+
+          </ul>
+
+          <p>
+            Engineers commonly use both methods for complete
+            optical-link validation.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SUMMARY -->
+
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Summary</span>
+
+            <h2>
+              The simplest way to read an eye diagram
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid-2">
+
+          <article class="card">
+
+            <h3>Vertical opening</h3>
+
+            <p>
+              A larger vertical opening provides more separation
+              between binary 1 and binary 0 and greater tolerance to
+              amplitude noise.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <h3>Horizontal opening</h3>
+
+            <p>
+              A larger horizontal opening provides more freedom in
+              choosing the sampling time and greater tolerance to
+              timing uncertainty.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <div class="card">
+
+          <p>
+            A wide, tall, and clean eye indicates better signal
+            quality.
+          </p>
+
+          <p>
+            Eye height and noise margin describe tolerance to amplitude
+            variation. Eye width and crossing-time jitter describe
+            timing margin. Rise and fall times describe transition
+            speed.
+          </p>
+
+          <p>
+            A BER test is still required to verify the actual error
+            performance of the optical link.
+          </p>
+
         </div>
 
       </div>
@@ -129,4 +1014,5 @@
   <script src="../../script.js"></script>
 
 </body>
+
 </html>
