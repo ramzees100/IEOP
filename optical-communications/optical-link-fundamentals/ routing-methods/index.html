@@ -1,1 +1,668 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Learn how routers obtain routes and how dynamic routing protocols are classified by algorithm and network scope."
+  >
+
+  <title>Network Routing Methods | IEOP</title>
+
+  <link rel="stylesheet" href="../../../style.css">
+
+  <style>
+    /* ==================================
+       Routing hierarchy charts
+    ================================== */
+
+    .routing-chart {
+      margin-top: 32px;
+      padding: 32px;
+      overflow: hidden;
+    }
+
+    .routing-chart-title {
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .routing-chart-intro {
+      max-width: 760px;
+      margin: 0 auto 30px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .routing-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .routing-node {
+      min-width: 150px;
+      max-width: 260px;
+      padding: 16px 18px;
+
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+
+      text-align: center;
+    }
+
+    .routing-node strong {
+      display: block;
+      color: var(--text);
+    }
+
+    .routing-node span {
+      display: block;
+      margin-top: 5px;
+
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .routing-root {
+      min-width: 260px;
+
+      background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-2)
+      );
+
+      border-color: transparent;
+    }
+
+    .routing-root strong,
+    .routing-root span {
+      color: #ffffff;
+    }
+
+    .routing-root span {
+      opacity: 0.85;
+    }
+
+    .routing-protocol {
+      min-width: 105px;
+      background: rgba(25, 167, 160, 0.1);
+    }
+
+    .routing-line {
+      width: 2px;
+      height: 28px;
+      background: var(--line);
+    }
+
+    .routing-grid {
+      position: relative;
+
+      display: grid;
+      width: 100%;
+
+      gap: 20px;
+      padding-top: 28px;
+    }
+
+    .routing-grid::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+
+      height: 2px;
+      background: var(--line);
+    }
+
+    .routing-grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .routing-grid-2::before {
+      left: 25%;
+      right: 25%;
+    }
+
+    .routing-grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .routing-grid-3::before {
+      left: 16.67%;
+      right: 16.67%;
+    }
+
+    .routing-grid-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .routing-grid-4::before {
+      left: 12.5%;
+      right: 12.5%;
+    }
+
+    .routing-branch {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .routing-branch::before {
+      content: "";
+
+      position: absolute;
+      top: -28px;
+
+      width: 2px;
+      height: 28px;
+
+      background: var(--line);
+    }
+
+    .routing-leaves {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      gap: 10px;
+    }
+
+    .routing-note {
+      max-width: 800px;
+      margin: 28px auto 0;
+      padding: 16px 18px;
+
+      background: var(--surface-2);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+
+      color: var(--muted);
+    }
+
+
+    /* ==================================
+       Responsive routing charts
+    ================================== */
+
+    @media (max-width: 900px) {
+      .routing-grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .routing-grid-4::before,
+      .routing-grid-4 .routing-branch::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .routing-chart {
+        padding: 22px 16px;
+      }
+
+      .routing-grid-2,
+      .routing-grid-3,
+      .routing-grid-4 {
+        grid-template-columns: 1fr;
+        padding-top: 0;
+      }
+
+      .routing-grid::before,
+      .routing-branch::before {
+        display: none;
+      }
+
+      .routing-branch + .routing-branch {
+        margin-top: 20px;
+      }
+
+      .routing-node {
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+
+    <!-- Page introduction -->
+    <section class="page-hero">
+      <div class="container">
+
+        <span class="eyebrow">
+          Optical Networking
+        </span>
+
+        <h1>Network Routing Methods</h1>
+
+        <p>
+          Routing determines how packets move from one network to another.
+          Routers examine their routing tables and select an appropriate
+          path toward each destination.
+        </p>
+
+        <div class="button-row">
+          <a class="btn btn-secondary" href="../">
+            Back to Optical Networking Fundamentals
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Introduction -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">
+              Routing Fundamentals
+            </span>
+
+            <h2>How Routers Learn and Select Routes</h2>
+
+            <p>
+              A router can learn routes from its connected interfaces,
+              manual configuration, or dynamic routing protocols. These
+              routes are stored in a routing table and used to forward
+              packets toward their destinations.
+            </p>
+          </div>
+        </div>
+
+
+        <!-- Chart 1 -->
+        <article class="card routing-chart">
+
+          <h2 class="routing-chart-title">
+            1. How a Router Obtains Routes
+          </h2>
+
+          <p class="routing-chart-intro">
+            Routes can enter the routing table through connected networks,
+            static configuration, or dynamic routing protocols.
+          </p>
+
+          <div class="routing-tree">
+
+            <div class="routing-node routing-root">
+              <strong>Route Learning</strong>
+
+              <span>
+                How a route enters the routing table
+              </span>
+            </div>
+
+            <div class="routing-line"></div>
+
+            <div class="routing-grid routing-grid-3">
+
+              <!-- Directly connected -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Directly Connected</strong>
+
+                  <span>
+                    Created when an active router interface has an
+                    assigned IP network
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-node routing-protocol">
+                  <strong>Connected Route</strong>
+
+                  <span>
+                    No next-hop router is required
+                  </span>
+                </div>
+
+              </div>
+
+
+              <!-- Static routing -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Static Routing</strong>
+
+                  <span>
+                    Routes manually configured by an administrator
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-protocol">
+                    <strong>Specific Static Route</strong>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>Static Default Route</strong>
+
+                    <span>0.0.0.0/0</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Dynamic routing -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Dynamic Routing</strong>
+
+                  <span>
+                    Routes automatically learned through routing protocols
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-protocol">
+                    <strong>Specific Learned Routes</strong>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>Learned Default Route</strong>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <p class="routing-note">
+            <strong>Technical note:</strong>
+            A default route is not a completely separate route-learning
+            method. It can be manually configured or dynamically learned.
+          </p>
+
+        </article>
+
+
+        <!-- Chart 2 -->
+        <article class="card routing-chart">
+
+          <h2 class="routing-chart-title">
+            2. Dynamic Routing Protocols by Algorithm
+          </h2>
+
+          <p class="routing-chart-intro">
+            Dynamic routing protocols can be classified according to how
+            they exchange information and calculate preferred routes.
+          </p>
+
+          <div class="routing-tree">
+
+            <div class="routing-node routing-root">
+              <strong>Dynamic Routing Protocols</strong>
+
+              <span>
+                Automatically exchange and update routing information
+              </span>
+            </div>
+
+            <div class="routing-line"></div>
+
+            <div class="routing-grid routing-grid-4">
+
+              <!-- Distance vector -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Distance-Vector</strong>
+
+                  <span>
+                    Shares route information with neighboring routers
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-protocol">
+                    <strong>RIP</strong>
+
+                    <span>Hop-count metric</span>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>IGRP</strong>
+
+                    <span>Legacy and obsolete</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Link state -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Link-State</strong>
+
+                  <span>
+                    Builds a topology map and calculates shortest paths
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-protocol">
+                    <strong>OSPF</strong>
+
+                    <span>Cost metric</span>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>IS-IS</strong>
+
+                    <span>Cost metric</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Advanced distance vector -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Advanced Distance-Vector</strong>
+
+                  <span>
+                    Commonly described as a hybrid approach
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-node routing-protocol">
+                  <strong>EIGRP</strong>
+
+                  <span>Composite metric</span>
+                </div>
+
+              </div>
+
+
+              <!-- Path vector -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Path-Vector</strong>
+
+                  <span>
+                    Selects routes using policy and path attributes
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-node routing-protocol">
+                  <strong>BGP</strong>
+
+                  <span>Attributes and AS path</span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </article>
+
+
+        <!-- Chart 3 -->
+        <article class="card routing-chart">
+
+          <h2 class="routing-chart-title">
+            3. Routing Protocols by Network Scope
+          </h2>
+
+          <p class="routing-chart-intro">
+            Routing protocols can also be classified by whether they
+            operate within an Autonomous System or exchange routes
+            across Autonomous System boundaries.
+          </p>
+
+          <div class="routing-tree">
+
+            <div class="routing-node routing-root">
+              <strong>Routing Protocol Scope</strong>
+
+              <span>
+                Where routing information is exchanged
+              </span>
+            </div>
+
+            <div class="routing-line"></div>
+
+            <div class="routing-grid routing-grid-2">
+
+              <!-- IGP -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>IGP — Interior</strong>
+
+                  <span>
+                    Finds internal routes within one Autonomous System
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-protocol">
+                    <strong>RIP</strong>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>OSPF</strong>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>IS-IS</strong>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>EIGRP</strong>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- BGP -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>BGP</strong>
+
+                  <span>
+                    Exchanges network reachability using routing policy
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-protocol">
+                    <strong>eBGP</strong>
+
+                    <span>
+                      Between different Autonomous Systems
+                    </span>
+                  </div>
+
+                  <div class="routing-node routing-protocol">
+                    <strong>iBGP</strong>
+
+                    <span>
+                      Distributes BGP routes within one Autonomous System
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <p class="routing-note">
+            <strong>Abbreviations:</strong>
+            IGP means Interior Gateway Protocol, BGP means Border Gateway
+            Protocol, and AS means Autonomous System.
+          </p>
+
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+
+</html>
