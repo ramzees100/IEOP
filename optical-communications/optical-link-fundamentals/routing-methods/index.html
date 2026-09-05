@@ -263,6 +263,136 @@
       </div>
     </section>
 
+    <!-- Routing content -->
+    <section class="section">
+      <div class="container">
+
+        <article class="card routing-chart">
+
+          <h2 class="routing-chart-title">
+            1. How a Router Obtains Routes
+          </h2>
+
+          <p class="routing-chart-intro">
+            Routes can enter the routing table through directly connected
+            networks, static configuration, or dynamic routing protocols.
+          </p>
+
+          <div class="routing-tree">
+
+            <!-- Root node -->
+            <div class="routing-node routing-root">
+              <strong>Route Learning</strong>
+
+              <span>
+                How a route enters the routing table
+              </span>
+            </div>
+
+            <div class="routing-line"></div>
+
+
+            <!-- Three main branches -->
+            <div class="routing-grid routing-grid-3">
+
+              <!-- Directly connected -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Directly Connected</strong>
+
+                  <span>
+                    Created when an active router interface has an
+                    assigned IP network
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-node routing-leaf">
+                  <strong>Connected Route</strong>
+
+                  <span>
+                    No next-hop router is required
+                  </span>
+                </div>
+
+              </div>
+
+
+              <!-- Static routing -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Static Routing</strong>
+
+                  <span>
+                    Routes manually configured by an administrator
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-leaf">
+                    <strong>Specific Static Route</strong>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>Static Default Route</strong>
+
+                    <span>0.0.0.0/0</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Dynamic routing -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Dynamic Routing</strong>
+
+                  <span>
+                    Routes learned automatically through routing protocols
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-leaf">
+                    <strong>Specific Learned Routes</strong>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>Learned Default Route</strong>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <p class="routing-note">
+            <strong>Technical note:</strong>
+            A default route is not a separate route-learning method.
+            It can be manually configured or dynamically learned.
+          </p>
+
+        </article>
+
+      </div>
+    </section>
+
+    
   </main>
 
 </body>
