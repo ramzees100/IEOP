@@ -103,19 +103,25 @@
 
 
         <div class="grid-3">
-<a class="card card-link" href="optical-link-fundamentals/">
+<a
+  href="optical-link-fundamentals/"
+  class="card-link"
+  aria-label="Explore Optical Link Fundamentals"
+>
+  <article class="card">
+    <div class="card-icon">↔</div>
 
-  <div class="card-icon">
-    ↔
-  </div>
+    <h3>Optical Link Fundamentals</h3>
 
-  <h3>Optical Link Fundamentals</h3>
+    <p>
+      Learn how transmitters, optical fibers, and receivers work together
+      to carry information.
+    </p>
 
-  <p>
-    Learn how transmitters, optical fibers, and receivers work together
-    to carry information.
-  </p>
-
+    <span class="status-label available">
+      Explore Topic
+    </span>
+  </article>
 </a>
                 <a
             href="eye-diagrams/"
