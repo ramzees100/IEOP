@@ -388,6 +388,166 @@
           </p>
 
         </article>
+                <!-- Chart 2 -->
+        <article class="card routing-chart">
+
+          <h2 class="routing-chart-title">
+            2. Dynamic Routing Protocols by Algorithm
+          </h2>
+
+          <p class="routing-chart-intro">
+            Dynamic routing protocols can be classified according to how
+            they exchange routing information and calculate preferred paths.
+          </p>
+
+          <div class="routing-tree">
+
+            <!-- Root node -->
+            <div class="routing-node routing-root">
+              <strong>Dynamic Routing Protocols</strong>
+
+              <span>
+                Automatically exchange and update routing information
+              </span>
+            </div>
+
+            <div class="routing-line"></div>
+
+
+            <!-- Four algorithm branches -->
+            <div class="routing-grid routing-grid-4">
+
+              <!-- Distance-vector -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Distance-Vector</strong>
+
+                  <span>
+                    Shares route information with neighboring routers
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-leaf">
+                    <strong>RIP</strong>
+
+                    <span>
+                      Hop-count metric
+                    </span>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>IGRP</strong>
+
+                    <span>
+                      Legacy and obsolete
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Link-state -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Link-State</strong>
+
+                  <span>
+                    Builds a topology map and calculates shortest paths
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-leaf">
+                    <strong>OSPF</strong>
+
+                    <span>
+                      Cost metric
+                    </span>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>IS-IS</strong>
+
+                    <span>
+                      Cost metric
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- Advanced distance-vector -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Advanced Distance-Vector</strong>
+
+                  <span>
+                    Commonly described as a hybrid approach
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-node routing-leaf">
+                  <strong>EIGRP</strong>
+
+                  <span>
+                    Composite metric
+                  </span>
+                </div>
+
+              </div>
+
+
+              <!-- Path-vector -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>Path-Vector</strong>
+
+                  <span>
+                    Selects routes using policy and path attributes
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-node routing-leaf">
+                  <strong>BGP</strong>
+
+                  <span>
+                    Attributes and AS path
+                  </span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <p class="routing-note">
+            <strong>Technical note:</strong>
+            EIGRP is most accurately described as an advanced
+            distance-vector protocol, although it is also commonly
+            called a hybrid routing protocol.
+          </p>
+
+        </article>
 
       </div>
     </section>
