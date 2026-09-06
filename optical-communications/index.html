@@ -11,12 +11,27 @@
 
   <meta
     name="description"
-    content="Learn the fundamentals of optical communications, including fiber links, transmitters, receivers, modulation, multiplexing, and system analysis."
+    content="Learn optical communications, including fiber-optic and free-space optical links, transmitters, receivers, modulation, multiplexing, link budgets, and system analysis."
   >
 
   <title>Optical Communications | IEOP</title>
 
   <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 760px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -25,12 +40,16 @@
     <div class="container header-inner">
 
       <a class="brand" href="../index.html">
-        <div class="brand-mark">IEOP</div>
+
+        <div class="brand-mark">
+          IEOP
+        </div>
 
         <div class="brand-text">
           <strong>Institute of Electro-Optics &amp; Photonics</strong>
           <span>Education • Research • Innovation</span>
         </div>
+
       </a>
 
       <nav id="mainNav">
@@ -42,6 +61,7 @@
       </nav>
 
       <div class="header-actions">
+
         <button
           class="icon-btn"
           id="themeToggle"
@@ -61,6 +81,7 @@
         >
           ☰
         </button>
+
       </div>
 
     </div>
@@ -69,71 +90,99 @@
 
   <main>
 
+    <!-- Hero -->
     <section class="hero">
       <div class="container">
 
-        <span class="eyebrow">Optical Communications</span>
+        <span class="eyebrow">
+          Optical Communications
+        </span>
 
-        <h1>Learn How Information Travels Through Light</h1>
+        <h1>
+          Learn How Information Travels Through Light
+        </h1>
 
         <p>
-          Explore optical fibers, transmitters, receivers, modulation,
-          multiplexing, link budgets, and optical communication-system
-          analysis.
+          Explore fiber-optic and free-space optical links, transmitters,
+          receivers, modulation, multiplexing, link budgets, and optical
+          communication-system analysis.
         </p>
 
       </div>
     </section>
 
 
+    <!-- Learning Topics -->
     <section class="section">
       <div class="container">
 
         <div class="section-head">
+
           <div>
-            <span class="eyebrow">Learning Topics</span>
-            <h2>Optical communication fundamentals</h2>
+            <span class="eyebrow">
+              Learning Topics
+            </span>
+
+            <h2>
+              Optical Communication Fundamentals
+            </h2>
           </div>
 
           <p>
             Begin with the basic optical link and progress toward modern
-            high-speed fiber-optic communication systems.
+            fiber-optic and free-space optical communication systems.
           </p>
+
         </div>
 
 
-     <div class="grid-3">
+        <!-- Existing topics -->
+        <div class="grid-3">
 
-  <a
-    href="optical-link-fundamentals/"
-    class="card-link"
-    aria-label="Explore Optical Link Fundamentals"
-  >
-    <article class="card">
-      <div class="card-icon">↔</div>
+          <!-- Optical Link Fundamentals -->
+          <a
+            href="optical-link-fundamentals/"
+            class="card-link"
+            aria-label="Explore Optical Link Fundamentals"
+          >
+            <article class="card">
 
-      <h3>Optical Link Fundamentals</h3>
+              <div class="card-icon">
+                ↔
+              </div>
 
-      <p>
-        Learn how transmitters, optical fibers, and receivers work together
-        to carry information.
-      </p>
+              <h3>
+                Optical Link Fundamentals
+              </h3>
 
-      <span class="status-label available">
-        Explore Topic
-      </span>
-    </article>
-  </a>
+              <p>
+                Learn how transmitters, optical channels, and receivers
+                work together to carry information.
+              </p>
 
-                <a
+              <span class="status-label available">
+                Explore Topic
+              </span>
+
+            </article>
+          </a>
+
+
+          <!-- Eye Diagrams -->
+          <a
             href="eye-diagrams/"
             class="card-link"
             aria-label="Explore Eye Diagrams"
           >
             <article class="card">
-              <div class="card-icon">◉</div>
 
-              <h3>Eye Diagrams</h3>
+              <div class="card-icon">
+                ◉
+              </div>
+
+              <h3>
+                Eye Diagrams
+              </h3>
 
               <p>
                 Learn how eye diagrams reveal signal quality, noise,
@@ -144,136 +193,224 @@
               <span class="status-label available">
                 Explore Topic
               </span>
+
             </article>
           </a>
 
-          
-        <a
-  href="optical-transmitters/"
-  class="card-link"
-  aria-label="Explore Optical Transmitters"
->
-  <article class="card">
-    <div class="card-icon">Tx</div>
 
-    <h3>Optical Transmitters</h3>
+          <!-- Optical Transmitters -->
+          <a
+            href="optical-transmitters/"
+            class="card-link"
+            aria-label="Explore Optical Transmitters"
+          >
+            <article class="card">
 
-    <p>
-      Explore lasers, LEDs, optical modulators, wavelength, power,
-      and transmitter characteristics.
-    </p>
+              <div class="card-icon">
+                Tx
+              </div>
 
-    <span class="status-label available">
-      Explore Topic
-    </span>
-  </article>
-</a>
+              <h3>
+                Optical Transmitters
+              </h3>
 
+              <p>
+                Explore lasers, LEDs, optical modulators, wavelength,
+                power, and transmitter characteristics.
+              </p>
+
+              <span class="status-label available">
+                Explore Topic
+              </span>
+
+            </article>
+          </a>
+
+
+          <!-- Optical Receivers -->
           <article class="card">
-            <div class="card-icon">Rx</div>
-            <h3>Optical Receivers</h3>
+
+            <div class="card-icon">
+              Rx
+            </div>
+
+            <h3>
+              Optical Receivers
+            </h3>
+
             <p>
               Study photodetectors, receiver sensitivity, noise,
               photodetection, and signal recovery.
             </p>
+
+            <span class="status-label coming-soon">
+              Coming Soon
+            </span>
+
           </article>
 
-<a
-  href="optical-transceivers/"
-  class="card-link"
-  aria-label="Explore Optical Transceivers"
->
-  <article class="card">
-    <div class="card-icon">Tx/Rx</div>
 
-    <h3>Optical Transceivers</h3>
+          <!-- Optical Transceivers -->
+          <a
+            href="optical-transceivers/"
+            class="card-link"
+            aria-label="Explore Optical Transceivers"
+          >
+            <article class="card">
 
-    <p>
-      Explore optical transceiver architecture, form factors, host interfaces,
-      optical interfaces, IEEE standards, and multi-source agreements.
-    </p>
+              <div class="card-icon">
+                Tx/Rx
+              </div>
 
-    <span class="status-label available">
-      Explore Topic
-    </span>
-  </article>
-</a>
+              <h3>
+                Optical Transceivers
+              </h3>
+
+              <p>
+                Explore optical-transceiver architecture, form factors,
+                host interfaces, optical interfaces, IEEE standards,
+                and multi-source agreements.
+              </p>
+
+              <span class="status-label available">
+                Explore Topic
+              </span>
+
+            </article>
+          </a>
+
+
+          <!-- Multiplexing -->
           <article class="card">
-            <div class="card-icon">λ</div>
-            <h3>Multiplexing</h3>
+
+            <div class="card-icon">
+              λ
+            </div>
+
+            <h3>
+              Multiplexing
+            </h3>
+
             <p>
               Understand wavelength-, time-, and space-division
               multiplexing techniques.
             </p>
+
+            <span class="status-label coming-soon">
+              Coming Soon
+            </span>
+
           </article>
 
 
+          <!-- Optical Link Budget -->
           <article class="card">
-            <div class="card-icon">dB</div>
-            <h3>Optical Link Budget</h3>
+
+            <div class="card-icon">
+              dB
+            </div>
+
+            <h3>
+              Optical Link Budget
+            </h3>
+
             <p>
-              Calculate optical power, fiber loss, connector loss,
+              Calculate optical power, channel loss, connector loss,
               system margin, and maximum transmission distance.
             </p>
+
+            <span class="status-label coming-soon">
+              Coming Soon
+            </span>
+
           </article>
 
 
-    <a href="bit-error-rate/" class="card-link">
-  <article class="card">
-    <div class="card-icon">BER</div>
+          <!-- System Performance -->
+          <a
+            href="bit-error-rate/"
+            class="card-link"
+            aria-label="Explore Bit Error Rate and System Performance"
+          >
+            <article class="card">
 
-    <h3>System Performance</h3>
+              <div class="card-icon">
+                BER
+              </div>
 
-    <p>
-      Examine bit-error rate, eye diagrams, dispersion,
-      bandwidth, and communication-system performance.
-    </p>
-  </article>
-</a>
-      <div class="grid-2">
+              <h3>
+                System Performance
+              </h3>
 
-  <!-- Fiber-Optic Communication -->
-  <article class="card">
+              <p>
+                Examine bit-error rate, eye diagrams, dispersion,
+                bandwidth, and communication-system performance.
+              </p>
 
-    <div class="card-icon">〰</div>
+              <span class="status-label available">
+                Explore Topic
+              </span>
 
-    <h3>Fiber-Optic Communication</h3>
-
-    <p>
-      Learn how information is transmitted through optical fibers,
-      including transmitters, receivers, modulation, multiplexing,
-      link analysis, eye diagrams, and bit-error-rate testing.
-    </p>
-
-    <span class="status-label coming-soon">
-      Coming Soon
-    </span>
-
-  </article>
-
-
-  <!-- Free-Space Optical Communication -->
-  <article class="card">
-
-    <div class="card-icon">⌁</div>
-
-    <h3>Free-Space Optical Communication</h3>
-
-    <p>
-      Explore laser communication through free space, including beam
-      propagation, optical link budgets, pointing and tracking,
-      atmospheric effects, and inter-satellite links.
-    </p>
-
-    <span class="status-label coming-soon">
-      Coming Soon
-    </span>
-
-  </article>
-
-</div>    
+            </article>
+          </a>
 
         </div>
+        <!-- End of grid-3 -->
+
+
+        <!-- Communication Media -->
+        <div class="grid-2">
+
+          <!-- Fiber-Optic Communication -->
+          <article class="card">
+
+            <div class="card-icon">
+              〰
+            </div>
+
+            <h3>
+              Fiber-Optic Communication
+            </h3>
+
+            <p>
+              Learn how information is transmitted through optical fibers,
+              including fiber propagation, attenuation, dispersion,
+              transmitters, receivers, multiplexing, and link analysis.
+            </p>
+
+            <span class="status-label coming-soon">
+              Coming Soon
+            </span>
+
+          </article>
+
+
+          <!-- Free-Space Optical Communication -->
+          <article class="card">
+
+            <div class="card-icon">
+              ⌁
+            </div>
+
+            <h3>
+              Free-Space Optical Communication
+            </h3>
+
+            <p>
+              Explore laser communication through free space, including
+              beam propagation, optical link budgets, pointing, acquisition
+              and tracking, atmospheric effects, and inter-satellite links.
+            </p>
+
+            <span class="status-label coming-soon">
+              Coming Soon
+            </span>
+
+          </article>
+
+        </div>
+        <!-- End of grid-2 -->
+
       </div>
     </section>
 
@@ -283,4 +420,5 @@
   <script src="../script.js"></script>
 
 </body>
+
 </html>
