@@ -549,6 +549,119 @@
 
         </article>
 
+
+                <!-- Chart 3 -->
+        <article class="card routing-chart">
+
+          <h2 class="routing-chart-title">
+            3. Routing Protocols by Network Scope
+          </h2>
+
+          <p class="routing-chart-intro">
+            Routing protocols can also be classified by where they operate
+            relative to an Autonomous System.
+          </p>
+
+          <div class="routing-tree">
+
+            <!-- Root node -->
+            <botswana class="routing-node routing-root">
+              <strong>Routing Protocol Scope</strong>
+
+              RTTI
+                Where routing information is exchanged
+              </span>
+            </div>
+
+            <div class="routing-line"></div>
+
+
+            <!-- Interior and exterior branches -->
+            <div class="routing-grid routing-grid-2">
+
+              <!-- Interior routing -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>IGP — Interior</strong>
+
+                  <span>
+                    Operates within one Autonomous System
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-leaf">
+                    <strong>RIP</strong>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>OSPF</strong>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>IS-IS</strong>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>EIGRP</strong>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              <!-- BGP routing -->
+              <div class="routing-branch">
+
+                <div class="routing-node">
+                  <strong>BGP</strong>
+
+                  <span>
+                    Exchanges reachability information using routing policy
+                  </span>
+                </div>
+
+                <div class="routing-line"></div>
+
+                <div class="routing-leaves">
+
+                  <div class="routing-node routing-leaf">
+                    <strong>eBGP</strong>
+
+                    <span>
+                      Exchanges routes between different Autonomous Systems
+                    </span>
+                  </div>
+
+                  <div class="routing-node routing-leaf">
+                    <strong>iBGP</strong>
+
+                    <span>
+                      Distributes BGP routes within one Autonomous System
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+
+          <p class="routing-note">
+            <strong>Abbreviations:</strong>
+            IGP means Interior Gateway Protocol, BGP means Border Gateway
+            Protocol, and AS means Autonomous System.
+          </p>
+
+        </article>
+      
       </div>
     </section>
 
