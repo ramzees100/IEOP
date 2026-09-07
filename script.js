@@ -1,92 +1,51 @@
 // ==============================
-// IEOP automatic translation
-// ==============================
-
-window.gtranslateSettings = {
-  default_language: "en",
-  languages: ["en", "ar"],
-  wrapper_selector: ".gtranslate_wrapper"
-};
-
-const headerActions = document.querySelector(".header-actions");
-
-if (headerActions) {
-  const translatorContainer = document.createElement("div");
-  translatorContainer.className = "gtranslate_wrapper";
-
-  // Place translator before the dark-mode button
-  headerActions.prepend(translatorContainer);
-
-  const translatorScript = document.createElement("script");
-  translatorScript.src =
-    "https://cdn.gtranslate.net/widgets/latest/dropdown.js";
-  translatorScript.defer = true;
-
-  document.body.appendChild(translatorScript);
-}
-
-
-// ==============================
-// Arabic right-to-left direction
-// ==============================
-
-function setPageDirection(language) {
-  if (language === "ar") {
-    document.documentElement.lang = "ar";
-    document.documentElement.dir = "rtl";
-  } else {
-    document.documentElement.lang = "en";
-    document.documentElement.dir = "ltr";
-  }
-}
-
-const savedLanguage =
-  localStorage.getItem("ieop-language") || "en";
-
-setPageDirection(savedLanguage);
-
-document.addEventListener("change", function (event) {
-  if (
-    event.target.matches(
-      ".gtranslate_wrapper select"
-    )
-  ) {
-    const selectedLanguage = event.target.value;
-
-    localStorage.setItem(
-      "ieop-language",
-      selectedLanguage
-    );
-
-    setPageDirection(selectedLanguage);
-  }
-});
-
-
-// ==============================
 // IEOP mobile navigation
 // ==============================
 
-const menuToggle =
-  document.getElementById("menuToggle");
-
-const mainNav =
-  document.getElementById("mainNav");
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
 if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", function () {
-    mainNav.classList.toggle("open");
-
-    const isOpen =
-      mainNav.classList.contains("open");
+    const isOpen = mainNav.classList.toggle("open");
 
     menuToggle.setAttribute(
       "aria-expanded",
-      isOpen
+      String(isOpen)
     );
 
-    menuToggle.textContent =
-      isOpen ? "✕" : "☰";
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close menu" : "Open menu"
+    );
+
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  // Close the mobile menu after selecting a link
+  const navigationLinks = mainNav.querySelectorAll("a");
+
+  navigationLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  // Close the mobile menu when Escape is pressed
+  document.addEventListener("keydown", function (event) {
+    if (
+      event.key === "Escape" &&
+      mainNav.classList.contains("open")
+    ) {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open menu");
+      menuToggle.textContent = "☰";
+      menuToggle.focus();
+    }
   });
 }
 
@@ -95,64 +54,39 @@ if (menuToggle && mainNav) {
 // IEOP dark mode
 // ==============================
 
-const themeToggle =
-  document.getElementById("themeToggle");
-
-const savedTheme =
-  localStorage.getItem("ieop-theme");
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("ieop-theme");
 
 if (savedTheme === "dark") {
   document.body.classList.add("dark");
 
   if (themeToggle) {
     themeToggle.textContent = "☀";
+    themeToggle.setAttribute(
+      "aria-label",
+      "Switch to light mode"
+    );
   }
 }
 
 if (themeToggle) {
-  themeToggle.addEventListener(
-    "click",
-    function () {
+  themeToggle.addEventListener("click", function () {
+    const darkModeEnabled =
       document.body.classList.toggle("dark");
 
-      const darkModeEnabled =
-        document.body.classList.contains("dark");
+    themeToggle.textContent =
+      darkModeEnabled ? "☀" : "☾";
 
-      themeToggle.textContent =
-        darkModeEnabled ? "☀" : "☾";
+    themeToggle.setAttribute(
+      "aria-label",
+      darkModeEnabled
+        ? "Switch to light mode"
+        : "Switch to dark mode"
+    );
 
-      localStorage.setItem(
-        "ieop-theme",
-        darkModeEnabled
-          ? "dark"
-          : "light"
-      );
-    }
-  );
-}
-
-
-// ==============================
-// Close mobile menu after clicking
-// ==============================
-
-if (mainNav && menuToggle) {
-  const navigationLinks =
-    mainNav.querySelectorAll("a");
-
-  navigationLinks.forEach(function (link) {
-    link.addEventListener(
-      "click",
-      function () {
-        mainNav.classList.remove("open");
-
-        menuToggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-        menuToggle.textContent = "☰";
-      }
+    localStorage.setItem(
+      "ieop-theme",
+      darkModeEnabled ? "dark" : "light"
     );
   });
 }
