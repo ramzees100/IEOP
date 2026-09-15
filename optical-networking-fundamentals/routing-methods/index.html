@@ -11,12 +11,137 @@
 
   <meta
     name="description"
-    content="Learn Ethernet, the OSI model, IPv4 addressing, network topologies, routing methods, and dynamic routing protocols."
+    content="Learn directly connected, static, default, and dynamic routing methods, including distance-vector, link-state, hybrid, and path-vector routing protocols."
   >
 
-  <title>Optical Networking Fundamentals | IEOP</title>
+  <title>Network Routing Methods | IEOP</title>
 
-  <link rel="stylesheet" href="../style.css">
+  <!-- The page is two folders below the repository root -->
+  <link rel="stylesheet" href="../../style.css">
+
+  <style>
+    .routing-section {
+      margin-top: 48px;
+    }
+
+    .routing-section h2 {
+      margin-bottom: 14px;
+    }
+
+    .routing-section > p {
+      max-width: 850px;
+    }
+
+    .routing-tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      margin: 32px 0;
+    }
+
+    .routing-level {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      width: 100%;
+    }
+
+    .routing-node {
+      min-width: 190px;
+      max-width: 280px;
+      padding: 18px;
+      border: 1px solid var(--border-color, #d8e1ec);
+      border-radius: 14px;
+      background: var(--card-bg, #ffffff);
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(20, 48, 78, 0.06);
+    }
+
+    .routing-node.primary {
+      background: #0d73bd;
+      color: #ffffff;
+      border-color: #0d73bd;
+    }
+
+    .routing-node.secondary {
+      border: 2px solid #0d73bd;
+    }
+
+    .routing-node strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .routing-node small {
+      display: block;
+      line-height: 1.5;
+      opacity: 0.85;
+    }
+
+    .routing-arrow {
+      color: #0d73bd;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 14px;
+      border: 1px solid var(--border-color, #d8e1ec);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .comparison-table th {
+      background: #0d73bd;
+      color: #ffffff;
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: rgba(13, 115, 189, 0.05);
+    }
+
+    .example-box {
+      margin-top: 24px;
+      padding: 22px;
+      border-left: 5px solid #0d73bd;
+      border-radius: 10px;
+      background: rgba(13, 115, 189, 0.07);
+    }
+
+    .example-box strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 760px) {
+      .routing-level {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .routing-node {
+        max-width: none;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      .comparison-table {
+        min-width: 720px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -25,7 +150,7 @@
   <header class="site-header">
     <div class="container header-inner">
 
-      <a class="brand" href="../index.html">
+      <a class="brand" href="../../index.html">
 
         <div class="brand-mark">
           IEOP
@@ -39,11 +164,11 @@
       </a>
 
       <nav id="mainNav">
-        <a href="../index.html">Home</a>
-        <a href="../tutorials.html" class="active">Tutorials</a>
-        <a href="../research.html">Research</a>
-        <a href="../publications.html">Publications</a>
-        <a href="../contact.html">Contact</a>
+        <a href="../../index.html">Home</a>
+        <a href="../../tutorials.html" class="active">Tutorials</a>
+        <a href="../../research.html">Research</a>
+        <a href="../../publications.html">Publications</a>
+        <a href="../../contact.html">Contact</a>
       </nav>
 
       <div class="header-actions">
@@ -76,22 +201,22 @@
 
   <main>
 
-    <!-- Page Introduction -->
+    <!-- Hero -->
     <section class="page-hero">
       <div class="container">
 
         <span class="eyebrow">
-          Networking Fundamentals
+          Optical Networking Fundamentals
         </span>
 
         <h1>
-          Optical Networking Fundamentals
+          Network Routing Methods
         </h1>
 
         <p>
-          Learn how Ethernet, IP addressing, network topology, and routing
-          operate above the optical transmission layer to move information
-          through a communication network.
+          Learn how routers identify available networks, select suitable
+          paths, and forward packets using directly connected, static,
+          default, and dynamically learned routes.
         </p>
 
         <div class="button-row">
@@ -100,7 +225,7 @@
             class="btn btn-secondary"
             href="../index.html"
           >
-            Back to Home
+            Back to Optical Networking Fundamentals
           </a>
 
         </div>
@@ -109,28 +234,199 @@
     </section>
 
 
-    <!-- Networking Topics -->
+    <!-- Introduction -->
     <section class="section">
       <div class="container">
 
         <div class="section-head">
 
           <div>
-
-            <span class="eyebrow">
-              Networking Topics
-            </span>
-
-            <h2>
-              Explore Optical Networking
-            </h2>
-
+            <span class="eyebrow">Introduction</span>
+            <h2>What Is Routing?</h2>
           </div>
 
           <p>
-            Begin with the OSI model and IPv4 addressing, then explore
-            network topology, route learning, and dynamic routing
-            protocols.
+            Routing is the process of selecting a path for an IP packet
+            from its source network to its destination network.
+          </p>
+
+        </div>
+
+        <p>
+          A router examines the destination IP address in each packet,
+          searches its routing table, selects the best matching route,
+          and forwards the packet through the appropriate interface or
+          next-hop router.
+        </p>
+
+        <div class="example-box">
+          <strong>Basic routing process</strong>
+
+          Destination IP address &rarr; routing-table lookup &rarr;
+          best route &rarr; outgoing interface or next hop
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- IPv4 Placement -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <span class="eyebrow">Network Layer</span>
+            <h2>Where Does IPv4 Fit?</h2>
+          </div>
+
+          <p>
+            IPv4 addressing and routing operate primarily at Layer 3,
+            the network layer of the OSI model.
+          </p>
+
+        </div>
+
+        <div class="grid-3">
+
+          <article class="card">
+
+            <div class="card-icon">
+              L1
+            </div>
+
+            <h3>Physical Layer</h3>
+
+            <p>
+              Optical fibers, free-space optical links, lasers,
+              photodetectors, transceivers, connectors, and signals.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
+              L2
+            </div>
+
+            <h3>Data-Link Layer</h3>
+
+            <p>
+              Ethernet frames, MAC addresses, switching, error detection,
+              and communication over a local link.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="card-icon">
+              L3
+            </div>
+
+            <h3>Network Layer</h3>
+
+            <p>
+              IPv4 and IPv6 addressing, routers, routing tables,
+              path selection, and packet forwarding.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Main Routing Methods -->
+    <section class="section">
+      <div class="container routing-section">
+
+        <span class="eyebrow">Classification One</span>
+
+        <h2>
+          Main Routing Methods
+        </h2>
+
+        <p>
+          Routers learn routes through connected interfaces, manual
+          configuration, a default route, or dynamic routing protocols.
+        </p>
+
+        <div class="routing-tree">
+
+          <div class="routing-level">
+            <div class="routing-node primary">
+              <strong>Routing Methods</strong>
+              <small>Ways a router learns how to reach networks</small>
+            </div>
+          </div>
+
+          <div class="routing-arrow">
+            ↓
+          </div>
+
+          <div class="routing-level">
+
+            <div class="routing-node secondary">
+              <strong>Directly Connected</strong>
+              <small>
+                Added automatically when an active interface has an
+                assigned IP network.
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>Static Routing</strong>
+              <small>
+                A specific route configured manually by a network
+                administrator.
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>Default Routing</strong>
+              <small>
+                A fallback route used when no more-specific destination
+                route is available.
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>Dynamic Routing</strong>
+              <small>
+                Routes learned and updated automatically through routing
+                protocols.
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Method Explanations -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <span class="eyebrow">Route Learning</span>
+            <h2>How Each Method Works</h2>
+          </div>
+
+          <p>
+            Each method offers a different balance of simplicity,
+            scalability, control, and automatic adaptation.
           </p>
 
         </div>
@@ -138,197 +434,328 @@
 
         <div class="grid-3">
 
-          <!-- Ethernet and the OSI Model -->
-          <article class="card coming-soon">
+          <article class="card">
 
             <div class="card-icon">
-              ▱
+              C
             </div>
 
-            <h3>
-              Ethernet and the OSI Model
-            </h3>
+            <h3>Directly Connected Route</h3>
 
             <p>
-              Learn where optical transmission, Ethernet frames, IP
-              addressing, and routing operate within the OSI model.
+              The router creates this route automatically when an
+              interface is configured, active, and connected to a
+              network.
             </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
 
           </article>
 
 
-          <!-- IPv4 Addressing and Subnetting -->
-          <article class="card coming-soon">
+          <article class="card">
 
             <div class="card-icon">
-              IP
+              S
             </div>
 
-            <h3>
-              IPv4 Addressing and Subnetting
-            </h3>
+            <h3>Static Route</h3>
 
             <p>
-              Understand IPv4 addresses, subnet masks, network addresses,
-              host addresses, CIDR notation, and default gateways.
+              The administrator manually defines the destination network,
+              subnet mask or prefix, and next hop or exit interface.
             </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
 
           </article>
 
 
-          <!-- Network Topologies -->
-          <article class="card coming-soon">
+          <article class="card">
 
             <div class="card-icon">
-              ⌘
+              0
             </div>
 
-            <h3>
-              Network Topologies
-            </h3>
+            <h3>Default Route</h3>
 
             <p>
-              Compare point-to-point, star, ring, bus, mesh, and hybrid
-              optical-network arrangements.
+              The router uses this route when the routing table contains
+              no more-specific match. In IPv4, it is written as
+              0.0.0.0/0.
             </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
 
           </article>
 
 
-          <!-- Network Routing Methods -->
-          <a
-            href="routing-methods/"
-            class="card-link"
-            aria-label="Explore Network Routing Methods"
-          >
-            <article class="card">
-
-              <div class="card-icon">
-                ⇄
-              </div>
-
-              <h3>
-                Network Routing Methods
-              </h3>
-
-              <p>
-                Learn how routers use directly connected, static, default,
-                and dynamically learned routes to forward network traffic.
-              </p>
-
-              <span class="status-label available">
-                Explore Topic
-              </span>
-
-            </article>
-          </a>
-
-
-          <!-- Dynamic Routing Protocols -->
-          <article class="card coming-soon">
+          <article class="card">
 
             <div class="card-icon">
-              ↻
+              D
             </div>
 
-            <h3>
-              Dynamic Routing Protocols
-            </h3>
+            <h3>Dynamic Route</h3>
 
             <p>
-              Compare RIP, OSPF, IS-IS, EIGRP, and BGP by algorithm,
-              routing metric, operation, and network scope.
+              Routers exchange network information and automatically
+              update routes when network conditions or topology change.
             </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
-
-          </article>
-
-
-          <!-- Network Performance -->
-          <article class="card coming-soon">
-
-            <div class="card-icon">
-              QoS
-            </div>
-
-            <h3>
-              Network Performance
-            </h3>
-
-            <p>
-              Examine bandwidth, throughput, latency, jitter, packet loss,
-              availability, redundancy, and quality of service.
-            </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
-
-          </article>
-
-
-          <!-- Optical Network Types -->
-          <article class="card coming-soon">
-
-            <div class="card-icon">
-              λ
-            </div>
-
-            <h3>
-              Optical Network Types
-            </h3>
-
-            <p>
-              Explore access, metropolitan, long-haul, data-center,
-              free-space, and inter-satellite optical networks.
-            </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
-
-          </article>
-
-
-          <!-- Optical Satellite Networking -->
-          <article class="card coming-soon">
-
-            <div class="card-icon">
-              SAT
-            </div>
-
-            <h3>
-              Optical Satellite Networking
-            </h3>
-
-            <p>
-              Learn about optical inter-satellite links, mesh topology,
-              changing connectivity, route selection, latency, and handover.
-            </p>
-
-            <span class="status-label">
-              Coming Soon
-            </span>
 
           </article>
 
         </div>
-        <!-- End of grid-3 -->
+
+      </div>
+    </section>
+
+
+    <!-- Dynamic Routing Algorithms -->
+    <section class="section">
+      <div class="container routing-section">
+
+        <span class="eyebrow">Classification Two</span>
+
+        <h2>
+          Dynamic Routing by Algorithm
+        </h2>
+
+        <p>
+          Dynamic routing protocols can be classified by how they
+          exchange information and calculate the best path.
+        </p>
+
+        <div class="routing-tree">
+
+          <div class="routing-level">
+            <div class="routing-node primary">
+              <strong>Dynamic Routing</strong>
+              <small>Automatic route discovery and maintenance</small>
+            </div>
+          </div>
+
+          <div class="routing-arrow">
+            ↓
+          </div>
+
+          <div class="routing-level">
+
+            <div class="routing-node secondary">
+              <strong>Distance Vector</strong>
+              <small>
+                RIP and IGRP<br>
+                Chooses routes using distance and direction.
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>Link State</strong>
+              <small>
+                OSPF and IS-IS<br>
+                Builds a topology map and calculates the shortest path.
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>Hybrid</strong>
+              <small>
+                EIGRP<br>
+                Combines characteristics of multiple routing approaches.
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>Path Vector</strong>
+              <small>
+                BGP<br>
+                Selects routes using path attributes and policy.
+              </small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- IGP and EGP -->
+    <section class="section alt">
+      <div class="container routing-section">
+
+        <span class="eyebrow">Classification Three</span>
+
+        <h2>
+          Routing Protocols by Network Scope
+        </h2>
+
+        <p>
+          Routing protocols are also classified according to whether
+          they operate within one autonomous system or between multiple
+          autonomous systems.
+        </p>
+
+        <div class="routing-tree">
+
+          <div class="routing-level">
+            <div class="routing-node primary">
+              <strong>Dynamic Routing Protocols</strong>
+              <small>Classified by administrative scope</small>
+            </div>
+          </div>
+
+          <div class="routing-arrow">
+            ↓
+          </div>
+
+          <div class="routing-level">
+
+            <div class="routing-node secondary">
+              <strong>IGP</strong>
+              <small>
+                Interior Gateway Protocol<br>
+                Used within one autonomous system
+              </small>
+            </div>
+
+            <div class="routing-node secondary">
+              <strong>EGP</strong>
+              <small>
+                Exterior Gateway Protocol<br>
+                Used between autonomous systems
+              </small>
+            </div>
+
+          </div>
+
+          <div class="routing-arrow">
+            ↓
+          </div>
+
+          <div class="routing-level">
+
+            <div class="routing-node">
+              <strong>IGP Examples</strong>
+              <small>RIP, OSPF, IS-IS, and EIGRP</small>
+            </div>
+
+            <div class="routing-node">
+              <strong>EGP Example</strong>
+              <small>BGP</small>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Comparison Table -->
+    <section class="section">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <span class="eyebrow">Comparison</span>
+            <h2>Routing-Method Summary</h2>
+          </div>
+
+          <p>
+            The correct routing method depends on network size,
+            complexity, reliability requirements, and expected changes.
+          </p>
+
+        </div>
+
+        <div class="table-wrap">
+
+          <table class="comparison-table">
+
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>How It Is Learned</th>
+                <th>Primary Advantage</th>
+                <th>Primary Limitation</th>
+                <th>Typical Use</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Directly Connected</td>
+                <td>Created automatically from active interfaces</td>
+                <td>Immediate and simple</td>
+                <td>Reaches only attached networks</td>
+                <td>Every routed network</td>
+              </tr>
+
+              <tr>
+                <td>Static</td>
+                <td>Configured manually</td>
+                <td>Predictable and controlled</td>
+                <td>Does not adapt automatically</td>
+                <td>Small or stable networks</td>
+              </tr>
+
+              <tr>
+                <td>Default</td>
+                <td>Usually configured manually</td>
+                <td>Reduces routing-table complexity</td>
+                <td>May not provide the best path</td>
+                <td>Internet or upstream gateway access</td>
+              </tr>
+
+              <tr>
+                <td>Dynamic</td>
+                <td>Learned through routing protocols</td>
+                <td>Adapts to topology changes</td>
+                <td>Requires processing and configuration</td>
+                <td>Medium and large networks</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Optical Networking Connection -->
+    <section class="section alt">
+      <div class="container">
+
+        <div class="section-head">
+
+          <div>
+            <span class="eyebrow">System Perspective</span>
+
+            <h2>
+              Routing in Optical Networks
+            </h2>
+          </div>
+
+          <p>
+            Optical communication provides the physical transmission
+            paths, while routing determines which sequence of links
+            carries the network traffic.
+          </p>
+
+        </div>
+
+        <div class="example-box">
+
+          <strong>Physical path versus logical route</strong>
+
+          A fiber or optical inter-satellite link provides Layer 1
+          connectivity. Ethernet operates at Layer 2, while IPv4 and
+          routing protocols select paths at Layer 3. A network route can
+          therefore traverse several individual optical links.
+
+        </div>
 
       </div>
     </section>
@@ -358,22 +785,22 @@
 
         <div>
 
-          <h4>
-            Explore
-          </h4>
+          <h4>Explore</h4>
 
           <p>
-            <a href="../tutorials.html">Tutorials</a>
+            <a href="../../tutorials.html">Tutorials</a>
           </p>
 
           <p>
-            <a href="../optical-communications/">
-              Optical Communications
+            <a href="../index.html">
+              Optical Networking Fundamentals
             </a>
           </p>
 
           <p>
-            <a href="../research.html">Research Areas</a>
+            <a href="../../optical-communications/">
+              Optical Communications
+            </a>
           </p>
 
         </div>
@@ -381,20 +808,18 @@
 
         <div>
 
-          <h4>
-            Connect
-          </h4>
+          <h4>Connect</h4>
 
           <p>
-            <a href="../about.html">About IEOP</a>
+            <a href="../../about.html">About IEOP</a>
           </p>
 
           <p>
-            <a href="../publications.html">Publications</a>
+            <a href="../../publications.html">Publications</a>
           </p>
 
           <p>
-            <a href="../contact.html">Contact</a>
+            <a href="../../contact.html">Contact</a>
           </p>
 
         </div>
@@ -410,7 +835,7 @@
   </footer>
 
 
-  <script src="../script.js"></script>
+  <script src="../../script.js"></script>
 
 </body>
 
