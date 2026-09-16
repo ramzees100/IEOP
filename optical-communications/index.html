@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Learn optical communications, including fiber-optic and free-space optical links, transmitters, receivers, modulation, multiplexing, link budgets, and system analysis."
+    content="Learn optical communications, including transmitters, receivers, transceivers, modulation, multiplexing, system performance, fiber-optic links, and free-space optical communication."
   >
 
   <title>Optical Communications | IEOP</title>
@@ -19,11 +19,38 @@
   <link rel="stylesheet" href="../style.css">
 
   <style>
+    /* Category spacing */
+    .topic-group {
+      margin-top: 48px;
+    }
+
+    .topic-group:first-of-type {
+      margin-top: 32px;
+    }
+
+    /* Category heading */
+    .topic-group-head {
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .topic-group-head h3 {
+      margin: 0 0 8px;
+      color: var(--text, #06244a);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+    }
+
+    .topic-group-head p {
+      margin: 0;
+      color: var(--muted, #536b88);
+      line-height: 1.7;
+    }
+
+    /* Two-column grid */
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
-      margin-top: 24px;
     }
 
     @media (max-width: 760px) {
@@ -103,9 +130,9 @@
         </h1>
 
         <p>
-          Explore fiber-optic and free-space optical links, transmitters,
-          receivers, modulation, multiplexing, link budgets, and optical
-          communication-system analysis.
+          Explore optical transmitters, receivers, modulation,
+          multiplexing, system performance, fiber-optic links, and
+          free-space optical communication.
         </p>
 
       </div>
@@ -129,260 +156,356 @@
           </div>
 
           <p>
-            Begin with the basic optical link and progress toward modern
-            fiber-optic and free-space optical communication systems.
+            Begin with optoelectronic interfaces and progress toward
+            modulation, multiplexing, system analysis, and modern
+            optical communication channels.
           </p>
 
         </div>
 
 
-        <!-- Existing topics -->
-        <div class="grid-3">
+        <!-- ================================================== -->
+        <!-- 1. Optoelectronic Interfaces                       -->
+        <!-- ================================================== -->
 
-    
+        <section class="topic-group">
 
-          <!-- Eye Diagrams -->
-          <a
-            href="eye-diagrams/"
-            class="card-link"
-            aria-label="Explore Eye Diagrams"
-          >
+          <div class="topic-group-head">
+            <h3>Optoelectronic Interfaces</h3>
+
+            <p>
+              Learn how transmitters, receivers, and transceivers convert
+              signals between the electrical and optical domains.
+            </p>
+          </div>
+
+          <div class="grid-3">
+
+            <!-- Optical Transmitters -->
+            <a
+              href="optical-transmitters/"
+              class="card-link"
+              aria-label="Explore Optical Transmitters"
+            >
+              <article class="card">
+
+                <div class="card-icon">
+                  Tx
+                </div>
+
+                <h3>
+                  Optical Transmitters
+                </h3>
+
+                <p>
+                  Explore lasers, LEDs, optical modulators, wavelength,
+                  output power, and transmitter characteristics.
+                </p>
+
+                <span class="status-label available">
+                  Explore Topic
+                </span>
+
+              </article>
+            </a>
+
+
+            <!-- Optical Receivers -->
             <article class="card">
 
               <div class="card-icon">
-                ◉
+                Rx
               </div>
 
               <h3>
-                Eye Diagrams
+                Optical Receivers
               </h3>
 
               <p>
-                Learn how eye diagrams reveal signal quality, noise,
-                timing jitter, intersymbol interference, rise and fall
-                times, and receiver noise margin.
+                Study photodetectors, transimpedance amplifiers,
+                receiver sensitivity, noise, and signal recovery.
               </p>
 
-              <span class="status-label available">
-                Explore Topic
+              <span class="status-label coming-soon">
+                Coming Soon
               </span>
 
             </article>
-          </a>
 
 
-          <!-- Optical Transmitters -->
-          <a
-            href="optical-transmitters/"
-            class="card-link"
-            aria-label="Explore Optical Transmitters"
-          >
+            <!-- Optical Transceivers -->
+            <a
+              href="optical-transceivers/"
+              class="card-link"
+              aria-label="Explore Optical Transceivers"
+            >
+              <article class="card">
+
+                <div class="card-icon">
+                  Tx/Rx
+                </div>
+
+                <h3>
+                  Optical Transceivers
+                </h3>
+
+                <p>
+                  Explore transceiver architecture, form factors,
+                  host and optical interfaces, IEEE standards,
+                  and multi-source agreements.
+                </p>
+
+                <span class="status-label available">
+                  Explore Topic
+                </span>
+
+              </article>
+            </a>
+
+          </div>
+
+        </section>
+
+
+        <!-- ================================================== -->
+        <!-- 2. Modulation and Multiplexing                     -->
+        <!-- ================================================== -->
+
+        <section class="topic-group">
+
+          <div class="topic-group-head">
+            <h3>Modulation and Multiplexing</h3>
+
+            <p>
+              Understand how information is encoded onto an optical signal
+              and how multiple channels share the same communication system.
+            </p>
+          </div>
+
+          <div class="grid-2">
+
+            <!-- Optical Modulation -->
             <article class="card">
 
               <div class="card-icon">
-                Tx
+                MOD
               </div>
 
               <h3>
-                Optical Transmitters
+                Optical Modulation
               </h3>
 
               <p>
-                Explore lasers, LEDs, optical modulators, wavelength,
-                power, and transmitter characteristics.
+                Learn how information is encoded using OOK, NRZ, PAM4,
+                phase modulation, coherent modulation, and other formats.
               </p>
 
-              <span class="status-label available">
-                Explore Topic
+              <span class="status-label coming-soon">
+                Coming Soon
               </span>
 
             </article>
-          </a>
 
 
-          <!-- Optical Receivers -->
-          <article class="card">
-
-            <div class="card-icon">
-              Rx
-            </div>
-
-            <h3>
-              Optical Receivers
-            </h3>
-
-            <p>
-              Study photodetectors, receiver sensitivity, noise,
-              photodetection, and signal recovery.
-            </p>
-
-            <span class="status-label coming-soon">
-              Coming Soon
-            </span>
-
-          </article>
-
-
-          <!-- Optical Transceivers -->
-          <a
-            href="optical-transceivers/"
-            class="card-link"
-            aria-label="Explore Optical Transceivers"
-          >
+            <!-- Optical Multiplexing -->
             <article class="card">
 
               <div class="card-icon">
-                Tx/Rx
+                λ
               </div>
 
               <h3>
-                Optical Transceivers
+                Optical Multiplexing
               </h3>
 
               <p>
-                Explore optical-transceiver architecture, form factors,
-                host interfaces, optical interfaces, IEEE standards,
-                and multi-source agreements.
+                Understand wavelength-, time-, polarization-, frequency-,
+                and space-division multiplexing techniques.
               </p>
 
-              <span class="status-label available">
-                Explore Topic
+              <span class="status-label coming-soon">
+                Coming Soon
               </span>
 
             </article>
-          </a>
+
+          </div>
+
+        </section>
 
 
-          <!-- Multiplexing -->
-          <article class="card">
+        <!-- ================================================== -->
+        <!-- 3. System Performance                              -->
+        <!-- ================================================== -->
 
-            <div class="card-icon">
-              λ
-            </div>
+        <section class="topic-group">
 
-            <h3>
-              Multiplexing
-            </h3>
-
-            <p>
-              Understand wavelength-, time-, and space-division
-              multiplexing techniques.
-            </p>
-
-            <span class="status-label coming-soon">
-              Coming Soon
-            </span>
-
-          </article>
-
-
-          <!-- Optical Link Budget -->
-          <article class="card">
-
-            <div class="card-icon">
-              dB
-            </div>
-
-            <h3>
-              Optical Link Budget
-            </h3>
+          <div class="topic-group-head">
+            <h3>System Performance</h3>
 
             <p>
-              Calculate optical power, channel loss, connector loss,
-              system margin, and maximum transmission distance.
+              Evaluate optical communication systems using signal-quality
+              measurements, error statistics, and power-budget analysis.
             </p>
+          </div>
 
-            <span class="status-label coming-soon">
-              Coming Soon
-            </span>
+          <div class="grid-3">
 
-          </article>
+            <!-- Eye Diagrams -->
+            <a
+              href="eye-diagrams/"
+              class="card-link"
+              aria-label="Explore Eye Diagrams"
+            >
+              <article class="card">
+
+                <div class="card-icon">
+                  ◉
+                </div>
+
+                <h3>
+                  Eye Diagrams
+                </h3>
+
+                <p>
+                  Learn how eye diagrams reveal signal quality, noise,
+                  timing jitter, intersymbol interference, rise and fall
+                  times, and receiver noise margin.
+                </p>
+
+                <span class="status-label available">
+                  Explore Topic
+                </span>
+
+              </article>
+            </a>
 
 
-          <!-- System Performance -->
-          <a
-            href="bit-error-rate/"
-            class="card-link"
-            aria-label="Explore Bit Error Rate and System Performance"
-          >
+            <!-- Bit Error Rate -->
+            <a
+              href="bit-error-rate/"
+              class="card-link"
+              aria-label="Explore Bit Error Rate"
+            >
+              <article class="card">
+
+                <div class="card-icon">
+                  BER
+                </div>
+
+                <h3>
+                  Bit Error Rate
+                </h3>
+
+                <p>
+                  Learn how BER measures transmission reliability,
+                  how errors are counted, and how confidence levels
+                  affect zero-error test results.
+                </p>
+
+                <span class="status-label available">
+                  Explore Topic
+                </span>
+
+              </article>
+            </a>
+
+
+            <!-- Optical Link Budget -->
             <article class="card">
 
               <div class="card-icon">
-                BER
+                dB
               </div>
 
               <h3>
-                System Performance
+                Optical Link Budget
               </h3>
 
               <p>
-                Examine bit-error rate, eye diagrams, dispersion,
-                bandwidth, and communication-system performance.
+                Calculate transmitted and received power, channel loss,
+                connector loss, system margin, and maximum transmission
+                distance.
               </p>
 
-              <span class="status-label available">
-                Explore Topic
+              <span class="status-label coming-soon">
+                Coming Soon
               </span>
 
             </article>
-          </a>
 
-        </div>
-        <!-- End of grid-3 -->
+          </div>
+
+        </section>
 
 
-        <!-- Communication Media -->
-        <div class="grid-2">
+        <!-- ================================================== -->
+        <!-- 4. Communication Media                             -->
+        <!-- ================================================== -->
 
-          <!-- Fiber-Optic Communication -->
-          <article class="card">
+        <section class="topic-group">
 
-            <div class="card-icon">
-              〰
-            </div>
-
-            <h3>
-              Fiber-Optic Communication
-            </h3>
+          <div class="topic-group-head">
+            <h3>Communication Media</h3>
 
             <p>
-              Learn how information is transmitted through optical fibers,
-              including fiber propagation, attenuation, dispersion,
-              transmitters, receivers, multiplexing, and link analysis.
+              Explore how optical signals propagate through guided fiber
+              links and unguided free-space optical channels.
             </p>
+          </div>
 
-            <span class="status-label coming-soon">
-              Coming Soon
-            </span>
+          <div class="grid-2">
 
-          </article>
+            <!-- Fiber-Optic Communication -->
+            <article class="card">
+
+              <div class="card-icon">
+                〰
+              </div>
+
+              <h3>
+                Fiber-Optic Communication
+              </h3>
+
+              <p>
+                Learn how information is transmitted through optical
+                fibers, including propagation, attenuation, dispersion,
+                components, multiplexing, and link analysis.
+              </p>
+
+              <span class="status-label coming-soon">
+                Coming Soon
+              </span>
+
+            </article>
 
 
-          <!-- Free-Space Optical Communication -->
-          <article class="card">
+            <!-- Free-Space Optical Communication -->
+            <article class="card">
 
-            <div class="card-icon">
-              ⌁
-            </div>
+              <div class="card-icon">
+                ⌁
+              </div>
 
-            <h3>
-              Free-Space Optical Communication
-            </h3>
+              <h3>
+                Free-Space Optical Communication
+              </h3>
 
-            <p>
-              Explore laser communication through free space, including
-              beam propagation, optical link budgets, pointing, acquisition
-              and tracking, atmospheric effects, and inter-satellite links.
-            </p>
+              <p>
+                Explore laser communication through free space, including
+                beam propagation, link budgets, pointing, acquisition and
+                tracking, atmospheric effects, and inter-satellite links.
+              </p>
 
-            <span class="status-label coming-soon">
-              Coming Soon
-            </span>
+              <span class="status-label coming-soon">
+                Coming Soon
+              </span>
 
-          </article>
+            </article>
 
-        </div>
-        <!-- End of grid-2 -->
+          </div>
+
+        </section>
 
       </div>
     </section>
